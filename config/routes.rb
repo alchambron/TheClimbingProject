@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
 
   root "home_page#index"
   resources :centers
