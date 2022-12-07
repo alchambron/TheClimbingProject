@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :subcriptions
   resources :courses
   resources :order_courses
