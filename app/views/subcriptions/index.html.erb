@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Subcriptions</h1>
+
+<div id="subcriptions">
+  <% @subcriptions.each do |subcription| %>
+    <%= render subcription %>
+    <p>
+      <%= link_to "Show this subcription", subcription %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New subcription", new_subcription_path %>
