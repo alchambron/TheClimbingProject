@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Centers</h1>
+
+<div id="centers">
+  <% @centers.each do |center| %>
+    <%= render center %>
+    <p>
+      <%= link_to "Show this center", center %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New center", new_center_path %>

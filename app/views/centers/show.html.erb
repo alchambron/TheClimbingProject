@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @center %>
+
+<div>
+  <%= link_to "Edit this center", edit_center_path(@center) %> |
+  <%= link_to "Back to centers", centers_path %>
+
+  <%= button_to "Destroy this center", @center, method: :delete %>
+</div>
