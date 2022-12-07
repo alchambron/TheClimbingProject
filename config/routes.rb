@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :subscriptions
   devise_for :users
-  resources :subcriptions
   resources :courses
   resources :order_courses
   resources :order_subscriptions

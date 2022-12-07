@@ -1,10 +1,10 @@
-<%= form_with(model: subcription) do |form| %>
-  <% if subcription.errors.any? %>
+<%= form_with(model: subscription) do |form| %>
+  <% if subscription.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(subcription.errors.count, "error") %> prohibited this subcription from being saved:</h2>
+      <h2><%= pluralize(subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
 
       <ul>
-        <% subcription.errors.each do |error| %>
+        <% subscription.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
