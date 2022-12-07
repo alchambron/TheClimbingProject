@@ -18,6 +18,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'sassc-rails'
+gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
