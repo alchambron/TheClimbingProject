@@ -1,0 +1,37 @@
+<%= form_with(model: order_subscription) do |form| %>
+  <% if order_subscription.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(order_subscription.errors.count, "error") %> prohibited this order_subscription from being saved:</h2>
+
+      <ul>
+        <% order_subscription.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :subscription_id, style: "display: block" %>
+    <%= form.text_field :subscription_id %>
+  </div>
+
+  <div>
+    <%= form.label :subscription_end_date, style: "display: block" %>
+    <%= form.text_field :subscription_end_date %>
+  </div>
+
+  <div>
+    <%= form.label :datetime, style: "display: block" %>
+    <%= form.text_field :datetime %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
