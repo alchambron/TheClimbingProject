@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid d-flex flex-wrap justify-content-between">
-    <a class="navbar-brand" href="#"><img src="/assets/logo.jpg"></a>
+    <a class="navbar-brand" href="#"><img src="logo.jpg"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Climbing Project</a>
+          <%= link_to "Climbing Project", root_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Course</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Subscription</a>
+          <%= link_to "Subscription", subscriptions_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,15 +39,11 @@
                 </a>
                 <ul class="dropdown-menu">
                   <% if user_signed_in? %>
-                   
                     <%= link_to "Sign Out", destroy_user_session_path,class: "dropdown-item"%>
                   <% else %>
                     <%= link_to "Login", new_user_session_path,class: "dropdown-item" %>
                     <%= link_to "Sign-up", new_user_registration_path,class: "dropdown-item" %>
                   <% end %>
-                  <li><a class="dropdown-item" href="users/sign_up">Sign_up</a></li>
-                  <li><a class="dropdown-item" href="/users/sign_in">Sign_in</a></li>
-                  <li><a class="dropdown-item" href="/users/sign_out">Log out</a></li>
                 </ul>
               </li>
             </ul>
