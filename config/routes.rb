@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :courses
   resources :order_courses
+  scope '/order_courses' do
+    post 'book_course', to: 'order_courses#book_course', as: 'order_course_book_course'
+  end
   resources :order_subscriptions
   resources :restaurations
   resources :coworkings

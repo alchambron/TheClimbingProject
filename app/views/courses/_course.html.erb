@@ -10,8 +10,8 @@
   </p>
 
   <p>
-    <strong>Start time:</strong>
-    <%= course.start_time %>
+    <strong>Horaire:</strong>
+    <%= course.week_day_to_s %>: <%= course.start_time.to_s(:time) %> - <%= course.end_time.to_s(:time) %>
   </p>
 
   <p>
@@ -20,8 +20,8 @@
   </p>
 
   <p>
-    <strong>Max attendees:</strong>
-    <%= course.max_attendees %>
+    <strong>Nombre de places disponibles pour le 07/12/2022:</strong>
+    <%= course.get_available_slots("2022-12-07") %> / <%= course.max_attendees %>
   </p>
 
 </div>

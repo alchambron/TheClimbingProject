@@ -5,10 +5,6 @@
 <div id="courses">
   <% @courses.each do |course| %>
     <%= render course %>
-    <p>
-      <%= link_to "Show this course", course %>
-    </p>
+    <%= button_to "Réserver", order_course_book_course_path(course_id: course.id, date: "2022-12-07"), method: :post %>
   <% end %>
 </div>
-
-<%= link_to "New course", new_course_path %>

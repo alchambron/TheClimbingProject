@@ -21,6 +21,10 @@ class OrderCoursesController < ApplicationController
   # GET /order_courses/1/edit
   def edit; end
 
+  def book_course
+    OrderCourse.create(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
+  end
+
   # POST /order_courses or /order_courses.json
   def create
     @order_course = OrderCourse.new(order_course_params)
