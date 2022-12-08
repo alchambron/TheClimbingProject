@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid d-flex flex-wrap justify-content-between">
+    <%= image_tag("logo.jpg", class: "navbar-brand") %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Climbing Project", root_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cours</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Abonnement", subscriptions_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin menu
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Panel Administrateur</a></li>
+            <li><a class="dropdown-item" href="#">Modif Planning Cours</a></li>
+            <li><a class="dropdown-item" href="#">Modif Abonnement</a></li>
+            <li><a class="dropdown-item" href="#">Modif Menu Restauration</a></li>
+            <li><a class="dropdown-item" href="#">Modif Planning Coworking</a></li>
+          </ul>
+        </li>
+        <div class="nav-right">
+          <div class="dropdown">
+            <i id="burger-menu" onclick="myFunction()" class="hvr-grow fa-solid fa-bars fa-2x"></i>
+            <div id="myDrop" class="dropdown-content">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                  Menu Utilisateur 
+                </a>
+                <ul class="dropdown-menu">
+                  <% if user_signed_in? %>
+                    <%= link_to "Se deconnecter", destroy_user_session_path,class: "dropdown-item"%>
+                  <% else %>
+                    <%= link_to "Se connecter", new_user_session_path,class: "dropdown-item" %>
+                    <%= link_to "S'inscrire", new_user_registration_path,class: "dropdown-item" %>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
