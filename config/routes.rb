@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'checkout/create'
+  get 'checkout/success'
+  get 'checkout/cancel'
   get 'cart/list_course'
   get 'cart/add_course'
   get 'cart/delete_course'
