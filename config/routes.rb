@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :order_subscriptions
   resources :restaurations
   resources :coworkings
+  resources :relaxations
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
