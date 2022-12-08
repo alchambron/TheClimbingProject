@@ -1,2 +1,48 @@
-<h1>Cart#list_course</h1>
-<p>Find me in app/views/cart/list_course.html.erb</p>
+<div class="container">
+
+  <div class="mon-panier">
+    <h1>Mes cours</h1>
+  </div>
+
+
+  <% @courses.each do |course| %>
+    <div class="info-panier">
+      <div class="coursechoisi">
+        <p>
+          <%= course.title %><br />
+            <%= course.total_price %>
+        </p>
+        <p><%= button_to 'Supprimer du panier' , cart_delete_course_path(course.id), method: "delete" %></p>
+      </div>
+
+    </div>
+    <%end %>
+
+      <div class="recap">
+        <div class="recapitu">
+          <h2>Récapitulatif des cours</h2>
+        </div>
+        <hr>
+        <div class="nombrearticle">
+          <div class="na">
+            <p>Nombre articles : 
+                <%= @cart.courses_count %></p>
+          </div>
+          <hr>
+          <div class="montanttotal">
+            <div class="total">
+              <h4>Montant total : 
+                <%= @cart.total_price %>€
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="valider">
+         <% if @cart.courses_count > 0 %>
+          <%= button_to"Passer commande", checkout_create_path, remote: true %>
+          <% end %>
+      </div>
+</div>
