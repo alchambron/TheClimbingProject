@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
       u.permit(:first_name, :last_name, :birth_date, :is_admin, :email, :password, :password_confirmation)
     end
   end
+
+  def get_cart
+    @cart = Cart.get(session[:cart])
+  end
 end

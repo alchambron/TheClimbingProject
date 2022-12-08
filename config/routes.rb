@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'cart/list_course'
+  get 'cart/add_course'
+  get 'cart/delete_course'
+  get 'cart/list_subscription'
+  get 'cart/add_subscription'
+  get 'cart/delete_subscription'
+  get 'cart/save_to_session'
   get 'users/show'
 
   root "home_page#index"
