@@ -1,0 +1,2 @@
+module RestaurationsHelper
+end
