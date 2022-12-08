@@ -1,5 +1,5 @@
 class CartController < ApplicationController
-  def list_course
+  def list_courses
     @courses = @cart.courses
   end
 
