@@ -10,6 +10,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    description: Field::Text,
     order_subscriptions: Field::HasMany,
     price: Field::Number,
     created_at: Field::DateTime,
@@ -24,6 +25,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
+    description
     order_subscriptions
     price
   ].freeze

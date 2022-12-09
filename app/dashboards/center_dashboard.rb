@@ -1,6 +1,11 @@
 require "administrate/base_dashboard"
 
 class CenterDashboard < Administrate::BaseDashboard
+
+  def display_resource(center)
+    center.name
+  end
+
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -11,6 +16,7 @@ class CenterDashboard < Administrate::BaseDashboard
     id: Field::Number,
     courses: Field::HasMany,
     name: Field::String,
+    description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,6 +29,7 @@ class CenterDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
+    description
     courses
   ].freeze
 
@@ -30,18 +37,17 @@ class CenterDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    courses
     name
-    created_at
-    updated_at
+    description
+    courses
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    courses
     name
+    description
   ].freeze
 
   # COLLECTION_FILTERS
@@ -59,7 +65,7 @@ class CenterDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how centers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(center)
-  #   "Center ##{center.id}"
-  # end
+  def display_resource(center)
+    "Center ##{center.name}"
+  end
 end

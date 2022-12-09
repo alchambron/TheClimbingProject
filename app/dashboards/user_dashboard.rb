@@ -40,7 +40,6 @@ class UserDashboard < Administrate::BaseDashboard
     last_name
     birth_date
     center_id
-    order_courses
     order_subscriptions
   ].freeze
 
@@ -48,20 +47,14 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    first_name
+    last_name
+    email
     birth_date
     center_id
-    courses
-    email
-    encrypted_password
-    first_name
     is_admin
-    last_name
     order_courses
     order_subscriptions
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
-    subscriptions
     created_at
     updated_at
   ].freeze
@@ -70,20 +63,14 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    first_name
+    last_name
+    email
     birth_date
     center_id
-    courses
-    email
-    encrypted_password
-    first_name
     is_admin
-    last_name
     order_courses
     order_subscriptions
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
-    subscriptions
   ].freeze
 
   # COLLECTION_FILTERS
@@ -101,7 +88,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    "#{user.first_name} #{user.last_name}"
+  end
 end
