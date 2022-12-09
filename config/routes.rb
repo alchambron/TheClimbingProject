@@ -10,12 +10,11 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
   get 'coworkings/index'
-  get 'users/show', to: 'users#show'
-  root 'home_page#index'
-
+  root "home_page#index"
   resources :centers
   resources :subscriptions
   devise_for :users
+  resources :users
   resources :courses
   resources :order_courses
 
