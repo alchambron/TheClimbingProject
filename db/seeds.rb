@@ -26,7 +26,8 @@ end
 
 3.times do 
     center = Center.create!(
-        name: Faker::WorldCup.city
+        name: Faker::WorldCup.city,
+        description: Faker::Lorem.sentence(word_count: 40)
     )
 end
 
@@ -42,7 +43,8 @@ end
 3.times do
     susbscription = Subscription.create!(
         name: Faker::Games::SuperMario.character,
-        price: Faker::Commerce.price
+        price: Faker::Commerce.price,
+        description: Faker::Lorem.sentence(word_count: 20)
     )
 end
 

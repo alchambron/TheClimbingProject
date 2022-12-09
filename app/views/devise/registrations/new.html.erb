@@ -1,42 +1,42 @@
 <div class="flex-column  vh-100 d-flex align-items-center justify-content-center ">
   <div class="Container-form">
     <div class="Title">
-      <h2>Sign up</h2>
+      <h2>S'inscrire</h2>
     </div>
     <div class="Form  ">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div class="field">
-          <%= f.label :first_name, class:"input-text" %><br />
+          <%= f.label :"Prénom", class:"input-text" %><br />
           <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "input-field" %>
         </div>
         <br />
         <div class="field">
-          <%= f.label :last_name , class:"input-text"%><br />
+          <%= f.label :"Nom de famille"  , class:"input-text"%><br />
           <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "input-field" %>
         </div>
         <div class="fifi">
-          <%= f.label :birth_date, class:"input-text" %><br />
+          <%= f.label :"Date d'anniversaire", class:"input-text" %><br />
           <%= f.text_field :birth_date, :value => (f.object.birth_date.strftime('%m/%d/%Y') if f.object.birth_date), class:"input-field" %>
         </div>
         <div class="field">
-          <%= f.label :email, class:"input-text" %><br />
+          <%= f.label :Email, class:"input-text" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field" %>
         </div>
         <div class="fieldinput">
-          <%= f.label :password, class:"input-text" %><br />
+          <%= f.label :"Mot de passe", class:"input-text" %><br />
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class:"input-field"  %>
         </div>
            <div class="fieldinput">
-          <%= f.label :password_confirmation, class:"input-text" %><br />
+          <%= f.label :"Confirmation mot de passe", class:"input-text" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "confirm-password", class:"input-field"  %>
         </div>
      
       <div class="Validate">
         <div class="actions">
-          <%= f.submit "Sign up", class: "btn-primary hvr-grow" %>
+          <%= f.submit "S'inscrire'", class: "btn-primary hvr-grow" %>
         </div> 
       <% end %>
     </div>

@@ -1,0 +1,2 @@
+module RelaxationsHelper
+end
