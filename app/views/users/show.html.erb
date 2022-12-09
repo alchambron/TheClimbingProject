@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="nav-tabs mt-3">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">My Profile</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-header">My informations</div>
+        <div class="card-body">
+            <h5 class="card-title"><%= @user.first_name %> <%= @user.last_name%></h5>
+            <p class="card-text"><%= @user.birth_date %></p>
+            <p class="card-text"><%= @user.email%></p>
+            <a href="#" class="btn btn-secondary">Change your informations</a>
+        </div>
+    </div>
+
+     <div class="card mt-3">
+        <div class="card-header">My Courses</div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"><%= @order_course %></p>
+            <p class="card-text"></p>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-header">My Subscriptions</div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"><%= @order_subscription %></p>
+            <p class="card-text"></p>
+        </div>
+    </div>
+</div>

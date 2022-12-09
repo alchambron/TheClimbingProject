@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   get 'coworkings/index'
-
   root "home_page#index"
   resources :centers
   resources :subscriptions
   devise_for :users
+  resources :users
   resources :courses
   resources :order_courses
   resources :order_subscriptions
