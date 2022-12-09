@@ -1,22 +1,14 @@
 Rails.application.routes.draw do
   get 'coworkings/index'
-  scope '/cart' do
-    get 'list_courses', to: 'cart#list_courses', as: 'cart_list_courses'
-    post 'add_course', to: 'cart#add_course', as: 'cart_add_course'
-    delete 'delete_course/:id', to: 'cart#delete_course', as: 'cart_delete_course'
-
-    get 'list_subscriptions', to: 'cart#list_subscriptions', as: 'cart_list_subscriptions'
-    post 'add_subscription', to: 'cart#add_subscription', as: 'cart_add_subscription'
-    delete 'delete_subscription/:id', to: 'cart#delete_subscription', as: 'cart_delete_subscription'
-  end
   get 'users/show', to: 'users#show'
-
   root 'home_page#index'
+
   resources :centers
   resources :subscriptions
   devise_for :users
   resources :courses
   resources :order_courses
+
   scope '/order_courses' do
     post 'book_course', to: 'order_courses#book_course', as: 'order_course_book_course'
   end
