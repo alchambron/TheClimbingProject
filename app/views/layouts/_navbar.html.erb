@@ -11,11 +11,12 @@
           <%= link_to "Climbing Project", root_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cours</a>
+          <%= link_to "Cours", courses_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Abonnement", subscriptions_path, class: "nav-link" %>
         </li>
+          <% if user_signed_in? && current_user.is_admin %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Admin menu
@@ -28,6 +29,7 @@
             <li><a class="dropdown-item" href="#">Modif Planning Coworking</a></li>
           </ul>
         </li>
+          <% end %>
         <div class="nav-right">
           <div class="dropdown">
             <i id="burger-menu" onclick="myFunction()" class="hvr-grow fa-solid fa-bars fa-2x"></i>
