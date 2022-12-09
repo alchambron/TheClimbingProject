@@ -10,11 +10,13 @@ class CourseDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     center: Field::BelongsTo,
+    end_time: Field::Time,
     max_attendees: Field::Number,
     name: Field::String,
     order_courses: Field::HasMany,
     price: Field::String.with_options(searchable: false),
-    start_time: Field::DateTime,
+    start_time: Field::Time,
+    week_day: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -27,8 +29,8 @@ class CourseDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     center
+    end_time
     max_attendees
-    name
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -36,11 +38,13 @@ class CourseDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     center
+    end_time
     max_attendees
     name
     order_courses
     price
     start_time
+    week_day
     created_at
     updated_at
   ].freeze
@@ -50,11 +54,13 @@ class CourseDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     center
+    end_time
     max_attendees
     name
     order_courses
     price
     start_time
+    week_day
   ].freeze
 
   # COLLECTION_FILTERS
