@@ -28,9 +28,12 @@ class CourseDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    name
     center
-    end_time
     max_attendees
+    start_time
+    end_time
+    week_day
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -78,7 +81,7 @@ class CourseDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how courses are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(course)
+  #def display_resource(course)
   #   "Course ##{course.id}"
   # end
 end

@@ -13,8 +13,10 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     name: Field::String,
     order_subscriptions: Field::HasMany,
     price: Field::Number,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at: Field::DateTime.with_options(
+      format: "%d/%m/%Y"),
+    updated_at: Field::DateTime.with_options(
+      format: "%d/%m/%Y"),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -33,20 +35,20 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    description
     name
-    order_subscriptions
+    description
     price
     created_at
     updated_at
+    order_subscriptions
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    description
     name
+    description
     order_subscriptions
     price
   ].freeze
@@ -66,7 +68,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how subscriptions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(subscription)
-  #   "Subscription ##{subscription.id}"
-  # end
+  def display_resource(subscription)
+    "Abonnement #{subscription.name}"
+  end
 end

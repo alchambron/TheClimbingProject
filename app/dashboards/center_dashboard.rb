@@ -15,8 +15,10 @@ class CenterDashboard < Administrate::BaseDashboard
     longitude: Field::Number.with_options(decimals: 2),
     name: Field::String,
     users: Field::HasMany,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at: Field::DateTime.with_options(
+      format: "%d/%m/%Y"),
+    updated_at: Field::DateTime.with_options(
+      format: "%d/%m/%Y"),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,20 +28,20 @@ class CenterDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    courses
+    name
     description
-    latitude
+    courses
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    courses
+    name
     description
     latitude
     longitude
-    name
+    courses
     users
     created_at
     updated_at
@@ -49,12 +51,10 @@ class CenterDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    courses
+    name
     description
     latitude
     longitude
-    name
-    users
   ].freeze
 
   # COLLECTION_FILTERS
@@ -72,7 +72,7 @@ class CenterDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how centers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(center)
-  #   "Center ##{center.id}"
-  # end
+  def display_resource(center)
+    "#{center.name}"
+  end
 end

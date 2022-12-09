@@ -13,8 +13,10 @@ class OrderSubscriptionDashboard < Administrate::BaseDashboard
     subscription: Field::BelongsTo,
     subscription_end_date: Field::String,
     user: Field::BelongsTo,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at: Field::DateTime.with_options(
+      format: "%d/%m/%Y"),
+    updated_at: Field::DateTime.with_options(
+      format: "%d/%m/%Y"),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,7 +26,7 @@ class OrderSubscriptionDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    datetime
+    user
     subscription
     subscription_end_date
   ].freeze
@@ -33,10 +35,10 @@ class OrderSubscriptionDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    user
     datetime
     subscription
     subscription_end_date
-    user
     created_at
     updated_at
   ].freeze
@@ -66,7 +68,7 @@ class OrderSubscriptionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how order subscriptions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(order_subscription)
-  #   "OrderSubscription ##{order_subscription.id}"
-  # end
+  def display_resource(order_subscription)
+    "Abonnement : #{order_subscription.subscription.name}"
+  end
 end
