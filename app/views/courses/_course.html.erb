@@ -3,25 +3,20 @@
     <strong>Name:</strong>
     <%= course.name %>
   </p>
-
   <p>
     <strong>Price:</strong>
     <%= course.price %>
   </p>
-
   <p>
     <strong>Horaire:</strong>
     <%= course.week_day_to_s %>: <%= course.start_time.to_s(:time) %> - <%= course.end_time.to_s(:time) %>
   </p>
-
   <p>
     <strong>Center:</strong>
     <%= course.center_id %>
   </p>
-
   <p>
     <strong>Nombre de places disponibles pour le 07/12/2022:</strong>
-    <%= course.get_available_slots("2022-12-07") %> / <%= course.max_attendees %>
+    <%= course.max_attendees %>
   </p>
-
 </div>
