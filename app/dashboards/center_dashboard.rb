@@ -22,9 +22,8 @@ class CenterDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    courses
     name
-    created_at
+    courses
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
