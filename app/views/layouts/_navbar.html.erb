@@ -14,16 +14,16 @@
           <%= link_to "Cours", courses_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Subscription", subscriptions_path, class: "nav-link" %>
+          <%= link_to "Abonnement", subscriptions_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Admin menu
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Panel Administrator</a></li>
-            <li><a class="dropdown-item" href="#">Modif Planning Course</a></li>
-            <li><a class="dropdown-item" href="#">Modif Subscription</a></li>
+            <li><a class="dropdown-item" href="#">Panel Administrateur</a></li>
+            <li><a class="dropdown-item" href="#">Modif Planning Cours</a></li>
+            <li><a class="dropdown-item" href="#">Modif Abonnement</a></li>
             <li><a class="dropdown-item" href="#">Modif Menu Restauration</a></li>
             <li><a class="dropdown-item" href="#">Modif Planning Coworking</a></li>
           </ul>
@@ -35,14 +35,14 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                  Utilisateur menu
+                  Menu Utilisateur 
                 </a>
                 <ul class="dropdown-menu">
                   <% if user_signed_in? %>
-                    <%= link_to "Sign Out", destroy_user_session_path,class: "dropdown-item"%>
+                    <%= link_to "Se deconnecter", destroy_user_session_path,class: "dropdown-item"%>
                   <% else %>
-                    <%= link_to "Login", new_user_session_path,class: "dropdown-item" %>
-                    <%= link_to "Sign-up", new_user_registration_path,class: "dropdown-item" %>
+                    <%= link_to "Se connecter", new_user_session_path,class: "dropdown-item" %>
+                    <%= link_to "S'inscrire", new_user_registration_path,class: "dropdown-item" %>
                   <% end %>
                 </ul>
               </li>
