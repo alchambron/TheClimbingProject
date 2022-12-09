@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :restaurations
   resources :coworkings
   resources :relaxations
+  resources :loisirs
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
