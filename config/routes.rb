@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :users
+      resources :centers
+      resources :courses
+      resources :order_courses
+      resources :order_subscriptions
+      resources :subscriptions
+
+      root to: "users#index"
+    end
   get 'coworkings/index'
   get 'users/show', to: 'users#show'
   root 'home_page#index'
