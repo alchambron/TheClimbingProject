@@ -1,14 +1,27 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Courses</h1>
-
-<div id="courses">
-  <% @courses.each do |course| %>
-    <%= render course %>
-    <p>
-      <%= link_to "Show this course", course %>
-    </p>
+<%= week_calendar(events: @course_events, attribute: :start_time) do |date, course_events| %>
+  <%= date %>
+  <% course_events.each do |course_event| %>
+    <div class="accordion course-event" id="accordion<%= course_event.course.id %>">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading<%= course_event.course.id %>">
+          <button class="accordion-button collapsed accordion-event-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= course_event.course.id %>" aria-expanded="false" aria-controls="collapse<%= course_event.course.id %>">
+            <div><%= course_event.course.name %></div>
+            <div>(<%= course_event.start_time.strftime("%H:%M") %> - <%= course_event.end_time.strftime("%H:%M") %>)</div>
+            <div><span class="badge bg-secondary <%= 'bg-danger' unless course_event.has_available_slots %>">Créneaux disponibles: <%= course_event.available_slots %>/<%= course_event.course.max_attendees %></span></div>
+          </button>
+        </h2>
+        <div id="collapse<%= course_event.course.id %>" class="accordion-collapse collapse" aria-labelledby="heading<%= course_event.course.id %>" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <% if course_event.has_available_slots %>
+              <%= button_to "Réserver", order_course_book_course_path(course_id: course_event.course.id, date: course_event.date), method: :post, class:"btn btn-success"%>
+            <% else %>
+              Malheureusement, il n'y a plus de créneau disponible pour ce cours.
+            <% end%>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-</div>
-
-<%= link_to "New course", new_course_path %>
+<% end %>
