@@ -22,8 +22,7 @@ class OrderCoursesController < ApplicationController
   def edit; end
 
   def book_course
-    session[:book_course] =
-OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
+    session[:book_course] = OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
     redirect_to(checkout_create_path, remote: true)
   end
 
