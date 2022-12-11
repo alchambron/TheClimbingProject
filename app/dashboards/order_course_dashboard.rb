@@ -12,7 +12,8 @@ class OrderCourseDashboard < Administrate::BaseDashboard
     course: Field::BelongsTo,
     date: Field::Date,
     user: Field::BelongsTo,
-    created_at: Field::DateTime,
+    created_at: Field::DateTime.with_options(
+      format: "%d/%m/%Y"),
     updated_at: Field::DateTime,
   }.freeze
 
@@ -23,9 +24,8 @@ class OrderCourseDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    course
-    date
     user
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -44,7 +44,6 @@ class OrderCourseDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     course
-    date
     user
   ].freeze
 
