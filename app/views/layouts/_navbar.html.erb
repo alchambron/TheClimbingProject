@@ -16,18 +16,20 @@
         <li class="nav-item">
           <%= link_to "Abonnement", subscriptions_path, class: "nav-link" %>
         </li>
+          <% if user_signed_in? && current_user.is_admin %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Admin menu
+            Administrateur
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Panel Administrateur</a></li>
-            <li><a class="dropdown-item" href="#">Modif Planning Cours</a></li>
-            <li><a class="dropdown-item" href="#">Modif Abonnement</a></li>
-            <li><a class="dropdown-item" href="#">Modif Menu Restauration</a></li>
-            <li><a class="dropdown-item" href="#">Modif Planning Coworking</a></li>
+            <li><%= link_to "Panel Administrateur", admin_root_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Liste des Utilisateurs", admin_users_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Liste des salles", admin_centers_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Planning Cours", admin_courses_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Abonnements", admin_subscriptions_path, class: "dropdown-item" %></li>
           </ul>
         </li>
+          <% end %>
         <div class="nav-right">
           <div class="dropdown">
             <i id="burger-menu" onclick="myFunction()" class="hvr-grow fa-solid fa-bars fa-2x"></i>
