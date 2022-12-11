@@ -2,10 +2,14 @@ Rails.application.routes.draw do
   namespace :admin do
       resources :users
       resources :centers
-      resources :courses
-      resources :order_courses
-      resources :order_subscriptions
       resources :subscriptions
+      resources :courses
+      resources :coworkings
+      resources :loisirs
+      resources :order_subscriptions
+      resources :order_courses
+      resources :relaxations
+      resources :restaurations
 
       root to: "users#index"
     end
