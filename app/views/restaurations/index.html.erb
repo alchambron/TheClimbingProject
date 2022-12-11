@@ -1,7 +1,5 @@
 <%# Creating Variable %>
-<%= @restauration.each_with_index do |restau, id| %>
-  <% instance_variable_set("title_" + id, restau.title)%>
-<% end %>
+<% @restauration.each do |restauration| %>
 
 
 <div class="container-fluid column d-flex align-items-center">
@@ -12,7 +10,7 @@
   <div class="mx-3 w-50">
     <div class="d-flex">
       <div class="d-flex text-center p-3 ">
-        <p><%= title_1 %></p>
+        <p><%= restauration.content %></p>
       </div>
     </div>
     <div class="">
@@ -20,3 +18,5 @@
     </div>
   </div>
 </div>
+
+<% end %>
