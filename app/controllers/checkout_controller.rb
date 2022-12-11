@@ -1,5 +1,4 @@
 class CheckoutController < ApplicationController
-  # create session stripe
   def create
     course_order = OrderCourse.new(session[:book_course])
     @price = course_order.course.price
@@ -18,11 +17,8 @@ class CheckoutController < ApplicationController
           quantity: 1
         }
       ],
-      # défini les sessions
-      success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}', # ajout de l'ID de la session
-      cancel_url: checkout_cancel_url
+      success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}'
     )
-
     redirect_to(@session.url, allow_other_host: true)
   end
 
@@ -34,9 +30,6 @@ class CheckoutController < ApplicationController
   end
 
   def cancel
-    # @session = Stripe::Checkout::Session.retrieve(params[:session_id])
-    # @payment_intent = Stripe::PaymentIntent.retrieve(params[:session_id])
-    # On redirige vers la liste du panier avec un flash error
-    redirect_to(cart_list_courses_path, alert: 'Votre paiement a été annulé. Merci de rééssayer.')
+    redirect_to(courses_path, alert: 'Votre paiement a été annulé. Merci de rééssayer.')
   end
 end
