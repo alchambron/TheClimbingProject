@@ -22,8 +22,9 @@ class OrderCoursesController < ApplicationController
   def edit; end
 
   def book_course
-    OrderCourse.create(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
-    redirect_back(fallback_location: root_path)
+    session[:book_course] =
+OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
+    redirect_to(checkout_create_path, remote: true)
   end
 
   # POST /order_courses or /order_courses.json
@@ -74,6 +75,5 @@ class OrderCoursesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def order_course_params
     params.fetch(:order_course, {})
-    # params.require(:order_course).permit(:course_id, :user_id)
   end
 end

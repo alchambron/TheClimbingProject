@@ -1,7 +1,8 @@
 class CheckoutController < ApplicationController
   # create session stripe
   def create
-    @price = 10 # @course.price_course
+    course_order = OrderCourse.new(session[:book_course])
+    @price = course_order.course.price
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       mode: 'payment',
@@ -23,31 +24,13 @@ class CheckoutController < ApplicationController
     )
 
     redirect_to(@session.url, allow_other_host: true)
-
-    # respond_to do |format|
-    #  # renders create.js.erb
-    #  format.js # dans cette page create injecte moi du javascript
-    # end
   end
 
   def success
-    # extrait moi les infos de la session
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
-    # extrait moi les infos par rapport au montant qui a réelement payé lors de cette session
-    # @payment_intent = Stripe::PaymentIntent.retrieve(params[:session_id])
-
-    # On enregistre la commande dans la base
-    order = Order.create(user_id: current_user.id)
-    @cart.courses_ids.each { |course_id| OrderRow.create(order_course_id: order_course.id, course_id: course_id) }
-
-    # On vide le panier
-    # @cart.make_empty
-    # session[:cart] = @cart
-    # On redirige vers la page Mes commandes ( mais il n'y en a pas alors on redirige vers l'accueil)
-    redirect_to(
-      order_path(order_course.id),
-      notice: 'Votre commande est validée et sera traitée dans les plus brefs délais.'
-    )
+    OrderCourse.create(session[:book_course])
+    session[:book_course] = nil
+    redirect_to(courses_path, notice: 'Votre commande est validée et sera traitée dans les plus brefs délais.')
   end
 
   def cancel

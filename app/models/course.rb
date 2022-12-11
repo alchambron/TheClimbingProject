@@ -6,8 +6,4 @@ class Course < ApplicationRecord
     return Date::DAYNAMES[(week_day + 1) % 7]
   end
 
-  def price_course
-    c = Course.find(course_id)
-    return c.price
-  end
 end
