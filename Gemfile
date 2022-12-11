@@ -9,6 +9,7 @@ gem 'pry'
 gem 'rspec'
 gem 'rubocop', require: false
 gem 'table_print'
+gem 'figaro'
 
 # Stripe for processing payments
 gem 'stripe', '~> 5.28'
