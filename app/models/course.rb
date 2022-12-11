@@ -5,4 +5,9 @@ class Course < ApplicationRecord
   def week_day_to_s
     return Date::DAYNAMES[(week_day + 1) % 7]
   end
+
+  def price_course
+    c = Course.find(course_id)
+    return c.price
+  end
 end

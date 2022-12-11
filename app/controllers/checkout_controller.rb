@@ -1,8 +1,8 @@
 class CheckoutController < ApplicationController
   # create session stripe
   def create
-    @total = @cart.total_price # montant total
-    @session = Stripe::Checkout::Session.create( # session de paiement
+    @price = 10 # @course.price_course
+    @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: [
@@ -11,7 +11,7 @@ class CheckoutController < ApplicationController
             product_data: {
               name: 'Rails Stripe Checkout'
             },
-            unit_amount: (@total * 100).to_i,
+            unit_amount: (@price * 100).to_i,
             currency: 'eur'
           },
           quantity: 1
@@ -41,8 +41,8 @@ class CheckoutController < ApplicationController
     @cart.courses_ids.each { |course_id| OrderRow.create(order_course_id: order_course.id, course_id: course_id) }
 
     # On vide le panier
-    @cart.make_empty
-    session[:cart] = @cart
+    # @cart.make_empty
+    # session[:cart] = @cart
     # On redirige vers la page Mes commandes ( mais il n'y en a pas alors on redirige vers l'accueil)
     redirect_to(
       order_path(order_course.id),
