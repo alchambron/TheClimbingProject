@@ -30,6 +30,7 @@ class CourseDashboard < Administrate::BaseDashboard
     id
     name
     center
+    price
     max_attendees
     start_time
     end_time
@@ -40,14 +41,14 @@ class CourseDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    center
+    name
+    week_day
+    start_time
     end_time
     max_attendees
-    name
-    order_courses
     price
-    start_time
-    week_day
+    center
+    order_courses
     created_at
     updated_at
   ].freeze
@@ -56,14 +57,13 @@ class CourseDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    center
+    name
+    week_day
+    start_time
     end_time
     max_attendees
-    name
-    order_courses
     price
-    start_time
-    week_day
+    center
   ].freeze
 
   # COLLECTION_FILTERS
@@ -81,7 +81,7 @@ class CourseDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how courses are displayed
   # across all pages of the admin dashboard.
   #
-  #def display_resource(course)
-  #   "Course ##{course.id}"
-  # end
+  def display_resource(course)
+    "#{course.name}"
+  end
 end
