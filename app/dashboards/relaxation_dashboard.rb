@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class OrderCourseDashboard < Administrate::BaseDashboard
+class RelaxationDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,11 +9,11 @@ class OrderCourseDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    course: Field::BelongsTo,
-    date: Field::Date,
-    user: Field::BelongsTo,
-    created_at: Field::DateTime.with_options(
-      format: "%d/%m/%Y"),
+    center: Field::BelongsTo,
+    content: Field::Text,
+    subtitle: Field::String,
+    title: Field::String,
+    created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
 
@@ -24,17 +24,20 @@ class OrderCourseDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    user
-    created_at
+    center
+    title
+    subtitle
+    content
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    course
-    date
-    user
+    title
+    subtitle
+    content
+    center
     created_at
     updated_at
   ].freeze
@@ -43,8 +46,10 @@ class OrderCourseDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    course
-    user
+    center
+    title
+    subtitle
+    content
   ].freeze
 
   # COLLECTION_FILTERS
@@ -59,10 +64,10 @@ class OrderCourseDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how order courses are displayed
+  # Overwrite this method to customize how relaxations are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(order_course)
-  #   "OrderCourse ##{order_course.id}"
+  # def display_resource(relaxation)
+  #   "Relaxation ##{relaxation.id}"
   # end
 end
