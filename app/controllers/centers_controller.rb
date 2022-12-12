@@ -8,6 +8,7 @@ class CentersController < ApplicationController
 
   # GET /centers/1 or /centers/1.json
   def show
+    @center = Center.find(params[:id])
   end
 
   # GET /centers/new
