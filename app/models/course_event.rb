@@ -37,6 +37,6 @@ class CourseEvent
   end
 
   def reservation_success
-    return 
+    return available_slots
   end
 end

@@ -3,7 +3,7 @@
 <%= week_calendar(events: @course_events, attribute: :start_time) do |date, course_events| %>
   <%= date %>
   <% course_events.each do |course_event| %>
-    <div class="<%#= "reservation-success" if course_event.available_slots%> accordion course-event" id="accordion<%= course_event.course.id %>">
+    <div class="accordion course-event" id="accordion<%= course_event.course.id %>">
       <div class="accordion-item">
         <h2 class="accordion-header" id="heading<%= course_event.course.id %>">
           <button class="accordion-button collapsed accordion-event-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= course_event.course.id %>" aria-expanded="false" aria-controls="collapse<%= course_event.course.id %>">
@@ -25,3 +25,4 @@
     </div>
   <% end %>
 <% end %>
+<%#= "reservation-success" if course_event.available_slots%>
