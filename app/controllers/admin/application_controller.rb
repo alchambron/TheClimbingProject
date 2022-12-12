@@ -9,10 +9,9 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      # if !user_signed_in? || !current_user.is_admin
-      #   redirect_to root_path 
-      # end
-      # TODO Add authentication logic here.
+      if !user_signed_in? || !current_user.is_admin
+        redirect_to root_path 
+      end
     end
 
     # Override this value to specify the number of elements to display at a time
