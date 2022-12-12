@@ -10,9 +10,9 @@
   </head>
   <body>
     <!--bannière-->
-    <section class="jumbotron text-center">
+    <section class="jumbotron jumbotron-fluid text-center">
       <div class="container-banner">
-        <%= image_tag("climb3.png", class: "img-banner")%> 
+        <%= image_tag("climb3.png", class: "img-fluid")%>
       </div>
     </section>
     <div>
@@ -25,23 +25,20 @@
           <div class="col-md-4">
             <div class="card mb-4 box-shadow bg-dark text-white">
               <%= image_tag("climb2.jpg", class: "card-img-top") %>
-             <div class="card-img-overlay">
-                    <h2 class="card-text d-flex justify-content-start "> BLOCS</h2>
-                    <h3 class="card-text-cache d-flex justify-content-center"> Reservez une séance d'escalade </h3>
-                    <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+              <div class="card-img-overlay">
+                <h2 class="card-text d-flex justify-content-start "> BLOCS</h2>
+                <h3 class="card-text-cache d-flex justify-content-center"> Reservez une séance d'escalade </h3>
+                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
               </div>
             </div>
           </div>
-
-
-
           <div class="col-md-4">
             <div class="card mb-4 box-shadow bg-dark text-white">
               <%= image_tag("climb3.png", class: "card-img-top") %>
               <div class="card-img-overlay">
-                    <h2 class="card-text d-flex justify-content-start "> VOIES</h2>
-                    <h3 class="card-text-cache d-flex justify-content-center"> Reservez une séance d'escalade </h3>
-                    <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+                <h2 class="card-text d-flex justify-content-start "> VOIES</h2>
+                <h3 class="card-text-cache d-flex justify-content-center"> Reservez une séance d'escalade </h3>
+                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
               </div>
             </div>
           </div>
@@ -49,9 +46,9 @@
             <div class="card mb-4 box-shadow bg-dark text-white ">
               <%= image_tag("hamburger.jpg", class: "card-img-top ") %>
               <div class="card-img-overlay">
-                    <h2 class="card-text d-flex justify-content-start "> FOOD</h2>
-                    <h3 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim?", restaurations_path %> </h3>
-                    <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+                <h2 class="card-text d-flex justify-content-start "> FOOD</h2>
+                <h3 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim?", restaurations_path %> </h3>
+                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
               </div>
             </div>
           </div>
@@ -59,9 +56,9 @@
             <div class="card mb-4 box-shadow bg-dark text-white">
               <%= image_tag("spa.jpg", class: "card-img-top") %>
               <div class="card-img-overlay">
-                    <h2 class="card-text d-flex justify-content-start "> DETENTE</h2>
-                    <h3 class="card-text-cache d-flex justify-content-center"><%= link_to " Notre espace détente", relaxations_path %></h3>
-                    <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+                <h2 class="card-text d-flex justify-content-start "> DETENTE</h2>
+                <h3 class="card-text-cache d-flex justify-content-center"><%= link_to " Notre espace détente", relaxations_path %></h3>
+                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
               </div>
             </div>
           </div>
@@ -69,10 +66,9 @@
             <div class="card mb-4 box-shadow bg-dark text-white">
               <%= image_tag("climb2.jpg", class: "card-img-top") %>
               <div class="card-img-overlay">
-              
-                    <h2 class="card-text d-flex justify-content-start "> COWORKING</h2>
-                    <h3 class="card-text-cache d-flex justify-content-center"> <%= link_to "Notre espace de coworking", coworkings_path %></h3>
-                    <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+                <h2 class="card-text d-flex justify-content-start "> COWORKING</h2>
+                <h3 class="card-text-cache d-flex justify-content-center"> <%= link_to "Notre espace de coworking", coworkings_path %></h3>
+                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
               </div>
             </div>
           </div>
@@ -80,47 +76,29 @@
             <div class="card mb-4 box-shadow bg-dark text-white">
               <%= image_tag("loisirs.jpg", class: "card-img-top") %>
               <div class="card-img-overlay">
-                    <h2 class="card-text d-flex justify-content-start "> LOISIRS</h2>
-                    <h3 class="card-text-cache d-flex justify-content-center"> <%= link_to "Notre espace de loisirs", loisirs_path %></h3> 
-                    <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+                <h2 class="card-text d-flex justify-content-start "> LOISIRS</h2>
+                <h3 class="card-text-cache d-flex justify-content-center"> <%= link_to "Notre espace de loisirs", loisirs_path %></h3>
+                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="carouselExample" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col-4">
-              <%= image_tag("climb1.jpg", class: "d-block w-100") %>
-            </div>
-            <div class="col-4">
-              <%= image_tag("climb2.jpg", class: "d-block w-100") %>
-            </div>
-            <div class="col-4">
-              <%= image_tag("climb3.png", class: "d-block w-100") %>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-4">
-              <%= image_tag("climb4.jpg", class: "d-block w-100") %>
-            </div>
-            <div class="col-4">
-              <%= image_tag("climb5.jpg", class: "d-block w-100") %>
-            </div>
-          </div>
-        </div>
+    <div>
+      <h1 class="mt-3 text-center">Nos salles </h1>
+    </div>
+    <br>
+    <div class="d-flex justify-content-around my-3">
+    <% @center.each do |center| %>
+    <div class="card" style="width: 28rem;">
+      <img src="/assets/climb1.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= center.name %></h5>
+        <p class="card-text"><%= center.description %></p>
+        <%= button_to "Voir la salle", center_path(center.id), class: "btn btn-primary", method: "get" %>
       </div>
-      <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+    </div>
+    <% end %>
+
     </div>
