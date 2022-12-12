@@ -67,3 +67,31 @@ fr:
         created_at: Date de création
         updated_at: Mis à jour le
         order_subscriptions: Commandes
+      coworking:
+        title: Titre
+        subtitle: Sous Titre
+        content: Contenu
+        center: Salle
+        created_at: Date de création
+        updated_at: Mis à jour le
+      loisir: 
+        title: Titre
+        subtitle: Sous Titre
+        content: Contenu
+        center: Salle
+        created_at: Date de création
+        updated_at: Mis à jour le
+      relaxation:
+        title: Titre
+        subtitle: Sous Titre
+        content: Contenu
+        center: Salle 
+        created_at: Date de création
+        updated_at: Mis à jour le
+      restauration:
+        title: Titre
+        subtitle: Sous Titre
+        content: Contenu
+        center: Salle
+        created_at: Date de création
+        updated_at: Mis à jour le

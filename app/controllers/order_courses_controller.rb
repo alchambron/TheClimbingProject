@@ -12,10 +12,8 @@ class OrderCoursesController < ApplicationController
   # GET /order_courses/new
   def new
     return if session[:user_id].nil?
-    return if session[:cart].nil? || session[:cart].length == 0
 
     @order_course = OrderCourse.create(user_id: session[:user_id])
-    session[:cart].each { |course_id| OrderRow.create(order: @order_course, course_id: course_id) }
   end
 
   # GET /order_courses/1/edit

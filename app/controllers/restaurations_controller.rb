@@ -1,5 +1,6 @@
 class RestaurationsController < ApplicationController
   def index
-    end
+    @restauration = Restauration.all
+  end
 
 end

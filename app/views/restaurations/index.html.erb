@@ -1,3 +1,7 @@
+<%# Creating Variable %>
+<% @restauration.each do |restauration| %>
+
+
 <div class="container-fluid column d-flex align-items-center">
   <div class="d-flex justify-content-center w-50 row">
     <%= image_tag("restaurant.jpg", class: "m-3")%>
@@ -6,15 +10,7 @@
   <div class="mx-3 w-50">
     <div class="d-flex">
       <div class="d-flex text-center p-3 ">
-        <p> Venez découvrir notre cuisine unique et savoureuse !
-          Dégustez nos plats fraîchement préparés et notre sélection de vins exclusifs.
-          Réservez votre table maintenant et profitez d'une expérience culinaire inoubliable.
-          Offrez-vous une pause gourmande dans notre établissement chaleureux et accueillant.
-          Dînez en tête à tête dans notre ambiance romantique, ou en groupe dans notre salle spacieuse.
-          Nous mettons tout en œuvre pour vous proposer un service impeccable et des plats de qualité exceptionnelle.
-          Venez vivre l'expérience gastronomique ultime dans notre restaurant primé.
-          Ne manquez pas notre menu du jour, rempli de surprises culinaires savoureuses.
-          Réservez dès maintenant et venez découvrir pourquoi notre restaurant est si populaire auprès des gourmets !</p>
+        <p><%= restauration.content %></p>
       </div>
     </div>
     <div class="">
@@ -22,3 +18,5 @@
     </div>
   </div>
 </div>
+
+<% end %>
