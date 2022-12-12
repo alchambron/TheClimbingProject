@@ -48,5 +48,9 @@ module Admin
       avatar.purge
       redirect_back(fallback_location: requested_resource)
     end
+
+    def default_sorting_attribute
+      :id
+    end
   end
 end
