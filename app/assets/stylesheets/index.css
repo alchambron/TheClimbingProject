@@ -1,22 +1,28 @@
 .card:hover .card-img-overlay {
-    background-color: white;
-    position: absolute;
-    transition: 1s;
-  }
-  
-  .card-text-cache{
-    opacity: 0;
-  }
-  .card:hover .card-text{
-    opacity: 0;
-    transition: 1s;
-  }
-  .card:hover .card-text-cache{
-    color: rgb(34, 29, 114);
-    opacity:1;
-    transition: 1s;
-  }
-  
+  background-color: white;
+  position: absolute;
+  transition: 1s;
+}
+
+.card-text-cache {
+  opacity: 0;
+}
+
+.card:hover .card-text {
+  opacity: 0;
+  transition: 1s;
+}
+
+.card:hover .card-text-cache {
+  color: rgb(34, 29, 114);
+  opacity: 1;
+  transition: 1s;
+}
+
+
+.accordion-event-button {
+  flex-flow: column;
+}
   .carousel-inner{
     height: 400px;
     padding: 50px;

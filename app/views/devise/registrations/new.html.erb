@@ -9,43 +9,41 @@
           <%= f.label :"Prénom", class:"input-text" %><br />
           <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "input-field" %>
         </div>
-        <br />
         <div class="field">
           <%= f.label :"Nom de famille"  , class:"input-text"%><br />
           <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "input-field" %>
         </div>
-        <div class="fifi">
+        <div class="field">
           <%= f.label :"Date d'anniversaire", class:"input-text" %><br />
-          <%= f.text_field :birth_date, :value => (f.object.birth_date.strftime('%m/%d/%Y') if f.object.birth_date), class:"input-field" %>
+          <%= f.date_field :birth_date, class: "input-field" %><br />
+          <%# <%= f.date_select :birth_date, :value => (f.object.birth_date.strftime('%m/%d/%Y') if f.object.birth_date), class:"input-field" %>
+        </div>
+        <div class="field">
+          <%= f.label :"Quel est votre centre préféré ?", class: "input-text"%><br />
+          <%= f.collection_select :center_id, Center.all, :id, :name, class: "input-field" %><br/>
         </div>
         <div class="field">
           <%= f.label :Email, class:"input-text" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field" %>
         </div>
-        <div class="fieldinput">
+        <div class="field">
           <%= f.label :"Mot de passe", class:"input-text" %><br />
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class:"input-field"  %>
         </div>
-           <div class="fieldinput">
+        <div class="field">
           <%= f.label :"Confirmation mot de passe", class:"input-text" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "confirm-password", class:"input-field"  %>
         </div>
-     
-      <div class="Validate">
-        <div class="actions">
-          <%= f.submit "S'inscrire'", class: "btn-primary hvr-grow" %>
-        </div> 
-      <% end %>
+        <div class="Validate">
+          <div class="actions">
+            <%= f.submit "S'inscrire", class: "btn-primary hvr-grow" %>
+          </div>
+        <% end %>
+      </div>
     </div>
+    <%= render "devise/shared/links" %>
   </div>
-
-
-<%= render "devise/shared/links" %>
 </div>
-</div>
-
-
-

@@ -1,0 +1,58 @@
+https://dbdiagram.io/d/63908099bae3ed7c4545535d
+
+Table subscription {
+id integer
+name string
+price decimal
+}
+
+Table center {
+id integer
+name string
+location string
+}
+
+Table course {
+id integer
+name string
+price decimal
+start_time datetime
+center_id integer
+max_attendees integer
+}
+
+Table user {
+id integer
+center_id integer
+first_name string
+last_name string
+birthdate  datetime
+email email
+password password
+is_admin boolean
+}
+
+Table order_subscription {
+id integer
+user_id integer
+subscription_id integer
+subscription_end_date datetime
+}
+
+Table order_course {
+id integer
+course_id integer
+user_id integer
+}
+
+Ref: "order_subscription"."user_id" < "user"."id"
+
+Ref: "order_subscription"."subscription_id" < "subscription"."id"
+
+Ref: "course"."center_id" < "center"."id"
+
+Ref: "user"."center_id" < "center"."id"
+
+Ref: "order_course"."user_id" < "user"."id"
+
+Ref: "order_course"."course_id" < "course"."id"
