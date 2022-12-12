@@ -22,8 +22,13 @@ class OrderCoursesController < ApplicationController
   def edit; end
 
   def book_course
-    session[:book_course] = OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
-    redirect_to(checkout_create_path, remote: true)
+    if user_signed_in?
+      session[:book_course] =
+  OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
+      redirect_to(checkout_create_path, remote: true)
+    else
+      redirect_to(new_user_session_path)
+    end
   end
 
   # POST /order_courses or /order_courses.json
