@@ -35,4 +35,8 @@ class CourseEvent
   def has_available_slots
     return available_slots > 0
   end
+
+  def reservation_success
+    return 
+  end
 end
