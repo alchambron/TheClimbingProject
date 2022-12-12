@@ -19,6 +19,11 @@
   transition: 1s;
 }
 
+
 .accordion-event-button {
   flex-flow: column;
 }
+  .carousel-inner{
+    height: 400px;
+    padding: 50px;
+  }
