@@ -10,6 +10,8 @@ gem 'rspec'
 gem 'rubocop', require: false
 gem 'table_print'
 gem 'administrate'
+gem 'administrate-field-active_storage'
+gem "image_processing"
 
 # Stripe for processing payments
 gem 'stripe', '~> 5.28'
