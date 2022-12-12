@@ -15,5 +15,10 @@
  *= require index
  *= require coworking
  *= require simple_calendar
- *= require homepage
+ *= require home_page 
+ *= require navbar
+ *= require footer
+
+ 
+
  */
