@@ -11,6 +11,9 @@ gem 'rubocop', require: false
 gem 'table_print'
 gem 'administrate'
 
+gem "font-awesome-sass", "~> 6.2.1"
+
+
 # Stripe for processing payments
 gem 'stripe', '~> 5.28'
 
