@@ -1,5 +1,4 @@
 class CheckoutController < ApplicationController
-  # create session stripe
   def create
     course_order = OrderCourse.new(session[:book_course])
     @price = course_order.course.price
