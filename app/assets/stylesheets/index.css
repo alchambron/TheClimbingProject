@@ -17,3 +17,7 @@
     transition: 1s;
   }
   
+  .carousel-inner{
+    height: 400px;
+    padding: 50px;
+  }
