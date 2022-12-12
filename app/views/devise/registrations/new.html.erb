@@ -20,7 +20,7 @@
         </div>
         <div class="field">
           <%= f.label :"Quel est votre centre préféré ?", class: "input-text"%><br />
-          <%= f.collection_select :center, Center.all, :id, :name, class: "input-field" %><br/>
+          <%= f.collection_select :center_id, Center.all, :id, :name, class: "input-field" %><br/>
         </div>
         <div class="field">
           <%= f.label :Email, class:"input-text" %><br />
