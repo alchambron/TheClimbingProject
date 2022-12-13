@@ -42,5 +42,15 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
+
+    def destroy_thumbnail
+      avatar = requested_resource.thumbnail
+      avatar.purge
+      redirect_back(fallback_location: requested_resource)
+    end
+
+    def default_sorting_attribute
+      :id
+    end
   end
 end

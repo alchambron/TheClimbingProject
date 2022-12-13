@@ -37,6 +37,7 @@ fr:
         name: Nom
         users: Utilisateurs
         courses: Cours
+        thumbnail: Vignette
         created_at: Salle créer le
         updated_at: Mis à jour le
       course:
@@ -95,3 +96,11 @@ fr:
         center: Salle
         created_at: Date de création
         updated_at: Mis à jour le
+  administrate:
+    fields:
+      active_storage:
+        add: Ajouter
+        attachment: Image
+        no_attachment: Aucune image
+        remove: Supprimer
+        replace: Remplacer
