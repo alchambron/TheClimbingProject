@@ -95,4 +95,4 @@ end
 
 gem 'simple_calendar', '~> 2.4'
 
-gem 'dotenv-rails', groups: %i[development test]
+gem 'dotenv-rails', groups: %i[development production test]
