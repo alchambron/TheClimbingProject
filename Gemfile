@@ -14,9 +14,6 @@ gem 'administrate-field-active_storage'
 gem "image_processing"
 gem "aws-sdk-s3", require: false
 
-gem "font-awesome-sass", "~> 6.2.1"
-
-
 # Stripe for processing payments
 gem 'stripe', '~> 5.28'
 
