@@ -21,6 +21,11 @@ class CenterDashboard < Administrate::BaseDashboard
     users: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    thumbnail: Field::ActiveStorage.with_options(
+      destroy_url: proc do |namespace, resource, attachment|
+        [:thumbnail_admin_center, { attachment_id: attachment.id }]
+      end
+    ),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -44,6 +49,7 @@ class CenterDashboard < Administrate::BaseDashboard
     latitude
     longitude
     users
+    thumbnail
     created_at
     updated_at
   ].freeze
@@ -56,6 +62,7 @@ class CenterDashboard < Administrate::BaseDashboard
     description
     latitude
     longitude
+    thumbnail
   ].freeze
 
   # COLLECTION_FILTERS
