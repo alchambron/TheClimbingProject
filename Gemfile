@@ -10,6 +10,9 @@ gem 'rspec'
 gem 'rubocop', require: false
 gem 'table_print'
 gem 'administrate'
+gem 'administrate-field-active_storage'
+gem "image_processing"
+gem "aws-sdk-s3", require: false
 
 # Stripe for processing payments
 gem 'stripe', '~> 5.28'
@@ -18,6 +21,10 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
+
+
+
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
@@ -92,4 +99,4 @@ end
 
 gem 'simple_calendar', '~> 2.4'
 
-gem 'dotenv-rails', groups: %i[development test]
+gem 'dotenv-rails', groups: %i[development production test]

@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
+  resources :routes
+  resources :blocks
+  
   namespace :admin do
-    resources :users
-    resources :centers
-    resources :subscriptions
-    resources :courses
-    resources :coworkings
-    resources :loisirs
-    resources :order_subscriptions
-    resources :order_courses
-    resources :relaxations
-    resources :restaurations
+      resources :users
+      resources :centers do
+        delete :thumbnail, on: :member, action: :destroy_thumbnail 
+      end
+      resources :subscriptions
+      resources :courses
+      resources :coworkings
+      resources :loisirs
+      resources :order_subscriptions
+      resources :order_courses
+      resources :relaxations
+      resources :restaurations
 
     root to: 'users#index'
   end
   get 'coworkings/index'
-  root 'home_page#index'
+  root "home_page#index"
   resources :centers
   resources :subscriptions
   devise_for :users

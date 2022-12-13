@@ -1,104 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Index climbing-project</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
     <!--bannière-->
-    <section class="jumbotron jumbotron-fluid text-center">
-      <div class="container-banner">
-        <%= image_tag("climb3.png", class: "img-fluid")%>
+<section class="jumbotron jumbotron-fluid text-center">
+  <div class="container-banner">
+    <%= image_tag("climb3.png", class: "img-fluid")%>
+  </div>
+</section>
+<div>
+  <h1 class=" text-center "style="font-size:4vw">Nos services</h1>
+</div>
+<!--Card de nos services-->
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("climb2.jpg", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> BLOCS</h2>
+            <h3 class="card-text-cache d-flex justify-content-center"> Reservez une séance d'escalade </h3>
+            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+          </div>
+        </div>
       </div>
-    </section>
-    <div>
-      <h1 class="text-center">Nos services</h1>
-    </div>
-    <!--Card de nos services-->
-    <div class="album py-5 bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow bg-dark text-white">
-              <%= image_tag("climb2.jpg", class: "card-img-top") %>
-              <div class="card-img-overlay">
-                <h2 class="card-text d-flex justify-content-start "> BLOCS</h2>
-                <h3 class="card-text-cache d-flex justify-content-center"> Reservez une séance d'escalade </h3>
-                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
-              </div>
-            </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("climb3.png", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> VOIES</h2>
+            <h3 class="card-text-cache d-flex justify-content-center"> Reservez une séance d'escalade </h3>
+            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow bg-dark text-white">
-              <%= image_tag("climb3.png", class: "card-img-top") %>
-              <div class="card-img-overlay">
-                <h2 class="card-text d-flex justify-content-start "> VOIES</h2>
-                <h3 class="card-text-cache d-flex justify-content-center"> Reservez une séance d'escalade </h3>
-                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="card mb-4 box-shadow bg-dark text-white ">
+          <%= image_tag("hamburger.jpg", class: "card-img-top ") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> FOOD</h2>
+            <h3 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim?", restaurations_path %> </h3>
+            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
           </div>
-          <div class="col-md-4 ">
-            <div class="card mb-4 box-shadow bg-dark text-white ">
-              <%= image_tag("hamburger.jpg", class: "card-img-top ") %>
-              <div class="card-img-overlay">
-                <h2 class="card-text d-flex justify-content-start "> FOOD</h2>
-                <h3 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim?", restaurations_path %> </h3>
-                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("spa.jpg", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> DETENTE</h2>
+            <h3 class="card-text-cache d-flex justify-content-center"><%= link_to " Notre espace détente", relaxations_path %></h3>
+            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow bg-dark text-white">
-              <%= image_tag("spa.jpg", class: "card-img-top") %>
-              <div class="card-img-overlay">
-                <h2 class="card-text d-flex justify-content-start "> DETENTE</h2>
-                <h3 class="card-text-cache d-flex justify-content-center"><%= link_to " Notre espace détente", relaxations_path %></h3>
-                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("climb2.jpg", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> COWORKING</h2>
+            <h3 class="card-text-cache d-flex justify-content-center"> <%= link_to "Notre espace de coworking", coworkings_path %></h3>
+            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow bg-dark text-white">
-              <%= image_tag("climb2.jpg", class: "card-img-top") %>
-              <div class="card-img-overlay">
-                <h2 class="card-text d-flex justify-content-start "> COWORKING</h2>
-                <h3 class="card-text-cache d-flex justify-content-center"> <%= link_to "Notre espace de coworking", coworkings_path %></h3>
-                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow bg-dark text-white">
-              <%= image_tag("loisirs.jpg", class: "card-img-top") %>
-              <div class="card-img-overlay">
-                <h2 class="card-text d-flex justify-content-start "> LOISIRS</h2>
-                <h3 class="card-text-cache d-flex justify-content-center"> <%= link_to "Notre espace de loisirs", loisirs_path %></h3>
-                <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 box-shadow bg-dark text-white">
+          <%= image_tag("loisirs.jpg", class: "card-img-top") %>
+          <div class="card-img-overlay">
+            <h2 class="card-text d-flex justify-content-start "> LOISIRS</h2>
+            <h3 class="card-text-cache d-flex justify-content-center"> <%= link_to "Notre espace de loisirs", loisirs_path %></h3>
+            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
           </div>
         </div>
       </div>
     </div>
-    <div>
-      <h1 class="mt-3 text-center">Nos salles </h1>
-    </div>
-    <br>
-    <div class="d-flex justify-content-around my-3">
-    <% @center.each do |center| %>
-    <div class="card" style="width: 28rem;">
-      <img src="/assets/climb1.jpg" class="card-img-top" alt="...">
+  </div>
+</div>
+<div>
+  <h1 class="mt-3 text-center">Nos salles </h1>
+</div>
+<br>
+<div class="  d-flex justify-content-around  ">
+  <% @center.each do |center| %>
+    <div class="card col col-12 col-sm-4 m-1 p-2 ">
+      <% if center.thumbnail.attached?%>
+        <%= image_tag center.thumbnail %>
+      <% else %>
+        <img src="climb1.jpg" class="card-img-top" alt="...">
+      <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= center.name %></h5>
         <p class="card-text"><%= center.description %></p>
         <%= button_to "Voir la salle", center_path(center.id), class: "btn btn-primary", method: "get" %>
       </div>
     </div>
-    <% end %>
-
-    </div>
+  <% end %>
+</div>
