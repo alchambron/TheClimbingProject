@@ -18,7 +18,7 @@ class CheckoutController < ApplicationController
         }
       ],
 
-      success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}', # ajout de l'ID de la session
+      success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: checkout_cancel_url
     )
 
