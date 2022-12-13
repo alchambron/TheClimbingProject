@@ -10,6 +10,9 @@ gem 'rspec'
 gem 'rubocop', require: false
 gem 'table_print'
 gem 'administrate'
+gem 'administrate-field-active_storage'
+gem "image_processing"
+gem "aws-sdk-s3", require: false
 
 # Stripe for processing payments
 gem 'stripe', '~> 5.28'
@@ -96,4 +99,4 @@ end
 
 gem 'simple_calendar', '~> 2.4'
 
-gem 'dotenv-rails', groups: %i[development test]
+gem 'dotenv-rails', groups: %i[development production test]

@@ -5,4 +5,5 @@ class Center < ApplicationRecord
   has_many :coworkings
   has_many :relaxations
   has_many :loisirs
+  has_one_attached :thumbnail
 end

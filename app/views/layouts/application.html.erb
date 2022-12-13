@@ -10,6 +10,8 @@
     <!-- JavaScript Bundle with Popper -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/08d256aef3.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
@@ -17,14 +19,9 @@
 
   </head>
   <body>
-    <header>
-      <%=render'layouts/navbar'%>
-    </header>
-    <main>
-      <%= yield %>
-    </main>
-    <footer>
-      <%=render'layouts/footer'%>
-    </footer>
+    <%=render'layouts/navbar'%>
+    <%= yield %>
+    <%=render'layouts/footer'%>
+ 
   </body>
 </html>
