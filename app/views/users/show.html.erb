@@ -1,80 +1,85 @@
 <div class="container">
-
-    <div class="card m-3">
-        <div class="card-header text-center">
-            <h3> Mon profil </h3>
-        </div>
+  <div class="card m-3">
+    <div class="card-header text-center">
+      <h3 class="m-0"> Mon compte </h3>
     </div>
-
-    <div class="card m-3">
-        <div class="card-header">
-            <span class="d-flex justify-content">
-            <i class="fas fa-regular fa-circle-info mx-3"></i>
-            <h5> Mes informations </h5>
-            </span>
-        </div>
-        <div class="card-body">
-            <p class="card-title"> Prénom : <%= @user.first_name %></p>
-            <p class="card-title"> Nom de famille : <%= @user.last_name%></p>
-            <p class="card-title"> Date de naissance : <%= @user.birth_date.strftime("%d-%m-%Y") %></p>
-            <p class="card-title"> Email : <%= @user.email%></p>
-            <%= button_to 'Modifier mes informations', edit_user_registration_path(@user), method: :get, class: "btn btn-success" %>
-        </div>
+  </div>
+  <div class="card m-3">
+    <div class="card-header">
+      <span class="d-flex justify-content">
+        <i class="d-flex align-items-center fas fa-regular fa-circle-info mx-3"></i>
+        <h5 class="m-0"> Mes informations </h5>
+      </span>
     </div>
-
-     <div class="card m-3">
-        <div class="card-header">
-            <span class="d-flex justify-content">
-                <i class="fa-solid fa-calendar-days mx-3"></i>
-                <h5> Historique des mes cours </h5>
-            </span>
-        </div>
-    
-        <% @user.order_courses.each do |order_course| %>
-            <div class="row">
-                <div class="col-sm-6"> 
-                    <div class="card m-3" style="width: 18rem;">
-                        <div class="card-header d-flex justify-content-center">
-                            <h5> Commande n°<%= order_course.id %></h5>
-                        </div>
-                        <div class="d-flex flex-column m-2">
-                            <p class="mb-0"> Intitulé du cours : <%= order_course.course.name %></p>
-                            <p class="mb-0"> Date du cours : <%= order_course.course.start_time.strftime("%d-%m-%Y") %></p>
-                            <p class="mb-0"> Prix : <%= order_course.course.price %> €</p>
-                        </div>
-                    </div>
-                </div>
-             </div>
-        <% end %>
+    <div class="card-body">
+      <p class="card-title"> Prénom : <%= @user.first_name %></p>
+      <p class="card-title"> Nom de famille : <%= @user.last_name%></p>
+      <p class="card-title"> Date de naissance : <%= @user.birth_date.strftime("%d-%m-%Y") %></p>
+      <p class="card-title"> Email : <%= @user.email%></p>
+      <% if @user.has_active_subscription %>
+        <p>Votre date de fin d'abonnement : <%= @user.current_subscription.end_date %></p>
+      <% else %>
+      <% end %>
+      <%= button_to 'Modifier mes informations', edit_user_registration_path(@user), method: :get, class: "btn btn-success" %>
     </div>
-
-    <div class="card m-3">
-        <div class="card-header">
-            <span class="d-flex justify-content">
-                <i class="fa-solid fa-sheet-plastic mx-3"></i>
-                <h5> Mon abonnement </h5>
-            </span>
-        </div>
-
-        <% @user.order_subscriptions.each do |order_subscription| %>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card m-3" style="width: 18rem;">
-                        <div class="card-header d-flex justify-content-center">
-                            <h5> Commande n°<%= order_subscription.id %></h5>
-                        </div> 
-                        <div class="d-flex flex-column m-2">               
-                            <p class="mb-0"> Nom de l'abonnement : <%= order_subscription.subscription.name %></p>
-                            <p class="mb-0"> Date de fin : <%= order_subscription.subscription_end_date %></p>
-                            <p class="mb-0"> Prix : <%= order_subscription.subscription.price %> €</p>
-                            <div class="m-2 d-flex justify-content-center">
-                                <%= button_to 'Modifier mon abonnement', edit_order_subscription_path(@user), method: :get, class: "btn btn-success" %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  </div>
+  <div class="card m-3">
+    <div class="card-header">
+      <span class="d-flex justify-content">
+        <i class="d-flex align-items-center fa-solid fa-calendar-days mx-3"></i>
+        <h5 class="m-0"> Historique des mes cours </h5>
+      </span>
+    </div>
+    <% @user.order_courses.each do |order_course| %>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card m-3" style="width: 18rem;">
+            <div class="card-header d-flex justify-content-center">
+              <h5> Commande n°<%= order_course.id %></h5>
             </div>
-        <% end %>
+            <div class="d-flex flex-column m-2">
+              <p class="mb-0"> Intitulé du cours : <%= order_course.course.name %></p>
+              <p class="mb-0"> Date du cours : <%= order_course.course.start_time.strftime("%d-%m-%Y") %></p>
+              <p class="mb-0"> Prix : <%= order_course.course.price %> €</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="card m-3">
+    <div class="card-header">
+      <span class="d-flex justify-content">
+        <i class="d-flex align-items-center fa-solid fa-sheet-plastic mx-3"></i>
+        <h5 class="m-0"> Mon abonnement </h5>
+      </span>
     </div>
-    
+    <div class="container">
+      <div class="d-flex align-items-center flex-column m-3">
+        <% if !@user.has_active_subscription %>
+          <h5 class="m-2">Vous n'avez pas encore d'abonnement</h5>
+          <%= button_to "Prenez un abonnement", subscriptions_path, class: "btn btn-success" %>
+        <% end %>
+      </div>
+      <div class="row">
+        <% @user.order_subscriptions.each do |order_subscription| %>
+          <div class="col">
+            <div class="card m-3 row col-sm-6" style="width: 18rem;">
+              <div class="card-header d-flex justify-content-center">
+                <h5> Commande n°<%= order_subscription.id %></h5>
+              </div>
+              <div class="d-flex flex-column m-2">
+                <p class="mb-0"> Nom de l'abonnement : <%= order_subscription.subscription.name %></p>
+                <p class="mb-0"> Date de fin : <%= order_subscription.end_date %></p>
+                <p class="mb-0"> Prix : <%= order_subscription.subscription.price %> €</p>
+                <div class="m-2 d-flex justify-content-center">
+                  <%= button_to 'Modifier mon abonnement', edit_order_subscription_path(@user), method: :get, class: "btn btn-success" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
