@@ -12,7 +12,7 @@
             <ul class="list-unstyled mt-3 mb-4">
               <li><%=info.description%></li>
             </ul>
-            <%= button_to "S'abonner", order_subscription_book_subscription_path, method: :post, class:"btn btn-success"%>
+            <%= button_to "S'abonner", order_subscription_book_subscription_path(subscription_id: info.id), method: :post, class:"btn btn-success"%>
           </div>
         </div>
       </div>

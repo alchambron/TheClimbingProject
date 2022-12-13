@@ -6,7 +6,6 @@ class CoursesController < ApplicationController
     # It's a variable that is used to determine the start date of the week.
     monday_date = params.fetch(:start_date, Date.today).to_date.beginning_of_week(:monday)
     date_today = Date.today
-    redirect_back(fallback_location: root_path) if monday_date < date_today
     courses = Course.all
     @course_events = courses.map { |c| CourseEvent.from_course(c, monday_date) }
   end
