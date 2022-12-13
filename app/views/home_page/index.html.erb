@@ -92,7 +92,11 @@
     <div class="d-flex justify-content-around my-3">
     <% @center.each do |center| %>
     <div class="card" style="width: 28rem;">
-      <img src="/assets/climb1.jpg" class="card-img-top" alt="...">
+    <% if center.thumbnail.attached?%>
+      <%= image_tag center.thumbnail %>
+    <% else %>
+      <img src="climb1.jpg" class="card-img-top" alt="...">
+    <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= center.name %></h5>
         <p class="card-text"><%= center.description %></p>

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   
   namespace :admin do
       resources :users
-      resources :centers
+      resources :centers do
+        delete :thumbnail, on: :member, action: :destroy_thumbnail 
+      end
       resources :subscriptions
       resources :courses
       resources :coworkings
