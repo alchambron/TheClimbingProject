@@ -7,7 +7,9 @@ class OrderSubscriptionsController < ApplicationController
   end
 
   # GET /order_subscriptions/1 or /order_subscriptions/1.json
-  def show; end
+  def show
+    @order_subscriptions = OrderSubscription.find(params[:id])
+  end
 
   # GET /order_subscriptions/new
   def new

@@ -7,7 +7,9 @@ class OrderCoursesController < ApplicationController
   end
 
   # GET /order_courses/1 or /order_courses/1.json
-  def show; end
+  def show
+    @order_course = OrderCourse.find(params[:id])
+  end
 
   # GET /order_courses/new
   def new
