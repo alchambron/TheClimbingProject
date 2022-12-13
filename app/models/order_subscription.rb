@@ -2,7 +2,7 @@ class OrderSubscription < ApplicationRecord
   belongs_to :user
   belongs_to :subscription
 
-  def end_subscription(duration, date)
-    result = date + duration.days
+  def end_date
+    return created_at + subscription.duration.days
   end
 end
