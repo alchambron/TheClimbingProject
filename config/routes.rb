@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :routes
+  resources :blocks
+  
   namespace :admin do
       resources :users
       resources :centers do
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
       root to: "users#index"
     end
   get 'coworkings/index'
+
   root "home_page#index"
   resources :centers
   resources :subscriptions
