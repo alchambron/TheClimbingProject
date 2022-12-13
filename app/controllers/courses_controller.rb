@@ -3,7 +3,9 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
+    # It's a variable that is used to determine the start date of the week.
     monday_date = params.fetch(:start_date, Date.today).to_date.beginning_of_week(:monday)
+    date_today = Date.today
     courses = Course.all
     @course_events = courses.map { |c| CourseEvent.from_course(c, monday_date) }
   end

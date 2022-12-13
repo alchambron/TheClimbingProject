@@ -16,7 +16,7 @@
           <%= image_tag("climb2.jpg", class: "card-img-top") %>
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> BLOCS</h2>
-            <h3 class="card-text-cache d-flex justify-content-center"> Reservez une séance d'escalade </h3>
+            <h3 class="card-text-cache d-flex justify-content-center"><%= link_to " Découvrez les blocks", blocks_path%> </h3>
             <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
           </div>
         </div>
@@ -81,7 +81,11 @@
 <div class="  d-flex justify-content-around  ">
   <% @center.each do |center| %>
     <div class="card col col-12 col-sm-4 m-1 p-2 ">
-      <img src="/assets/climb1.jpg" class="card-img-top" alt="...">
+      <% if center.thumbnail.attached?%>
+        <%= image_tag center.thumbnail %>
+      <% else %>
+        <img src="climb1.jpg" class="card-img-top" alt="...">
+      <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= center.name %></h5>
         <p class="card-text"><%= center.description %></p>

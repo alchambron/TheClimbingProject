@@ -16,10 +16,9 @@ Rails.application.routes.draw do
       resources :relaxations
       resources :restaurations
 
-      root to: "users#index"
-    end
+    root to: 'users#index'
+  end
   get 'coworkings/index'
-
   root "home_page#index"
   resources :centers
   resources :subscriptions
@@ -31,6 +30,10 @@ Rails.application.routes.draw do
   scope '/order_courses' do
     post 'book_course', to: 'order_courses#book_course', as: 'order_course_book_course'
   end
+  scope '/order_subscriptions' do
+    post 'book_subscription', to: 'order_subscriptions#book_subscription', as: 'order_subscription_book_subscription'
+  end
+
   resources :order_subscriptions
   resources :restaurations
   resources :coworkings
@@ -45,5 +48,11 @@ Rails.application.routes.draw do
     get 'create', to: 'checkout#create', as: 'checkout_create'
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
     get 'success', to: 'checkout#success', as: 'checkout_success'
+  end
+
+  scope '/checkout_subscription' do
+    get 'create', to: 'checkout_subscription#create', as: 'checkout_subscription_create'
+    get 'cancel', to: 'checkout_subscription#cancel', as: 'checkout_subscription_cancel'
+    get 'success', to: 'checkout_subscription#success', as: 'checkout_subscription_success'
   end
 end
