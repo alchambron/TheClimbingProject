@@ -65,6 +65,7 @@ fr:
       subscription:
         name: Nom
         price: Prix
+        duration: Durée (jours)
         created_at: Date de création
         updated_at: Mis à jour le
         order_subscriptions: Commandes
