@@ -1,25 +1,18 @@
-
 <body class="light">
-  <button type="button" class="btn btn-dark ">Dark</button>
-  
   <div class="container-coworking">
     <div class="top-coworking text-center py-5 ">
       <h1> Espace coworking</h1>
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, saepe! Saepe dolor molestias impedit!
-      </p>
     </div>
-    <div class="d-flex">
-    <div class="description-coworking w-50 d-flex align-items-center text-center m-3">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel mi vel nisi luctus pretium. Maecenas sit amet
-        felis euismod, interdum urna non, luctus quam. Aliquam erat volutpat. Ut auctor semper mauris, eget sollicitudin
-        erat fermentum in.</p>
-    </div>
-
-    <div class="image-coworking w-50 m-2">
-      <%= image_tag("climb4.jpg", class: "img-fluid") %>
-    </div>
+    <% @coworking.each do |cowork| %>
+      <div class=" row m-3 border d-flex align-items-center d-flex flex-row ">
+        <div class="col col-12 col-sm-6 mt-4  ">
+          <p><%= cowork.content %></p>
+        </div>
+        <div class="col col-12 col-sm-6">
+          <%= image_tag("cowork.jpg", class: "mb-3 mt-4 w-100") %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  </div>
-
 </body>
 <script src="script_coworking.js"></script>

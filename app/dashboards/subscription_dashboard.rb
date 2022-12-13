@@ -26,8 +26,8 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    description
     name
+    description
     order_subscriptions
   ].freeze
 
@@ -49,7 +49,6 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     name
     description
-    order_subscriptions
     price
   ].freeze
 

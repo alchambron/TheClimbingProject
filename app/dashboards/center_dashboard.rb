@@ -10,15 +10,22 @@ class CenterDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     courses: Field::HasMany,
+    coworkings: Field::HasMany,
     description: Field::Text,
     latitude: Field::Number.with_options(decimals: 2),
+    loisirs: Field::HasMany,
     longitude: Field::Number.with_options(decimals: 2),
     name: Field::String,
+    relaxations: Field::HasMany,
+    restaurants: Field::HasMany,
     users: Field::HasMany,
-    created_at: Field::DateTime.with_options(
-      format: "%d/%m/%Y"),
-    updated_at: Field::DateTime.with_options(
-      format: "%d/%m/%Y"),
+    created_at: Field::DateTime,
+    updated_at: Field::DateTime,
+    thumbnail: Field::ActiveStorage.with_options(
+      destroy_url: proc do |namespace, resource, attachment|
+        [:thumbnail_admin_center, { attachment_id: attachment.id }]
+      end
+    ),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -41,8 +48,8 @@ class CenterDashboard < Administrate::BaseDashboard
     description
     latitude
     longitude
-    courses
     users
+    thumbnail
     created_at
     updated_at
   ].freeze
@@ -55,6 +62,7 @@ class CenterDashboard < Administrate::BaseDashboard
     description
     latitude
     longitude
+    thumbnail
   ].freeze
 
   # COLLECTION_FILTERS

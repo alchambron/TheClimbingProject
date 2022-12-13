@@ -12,7 +12,6 @@ module Admin
       if !user_signed_in? || !current_user.is_admin
         redirect_to root_path 
       end
-      # TODO Add authentication logic here.
     end
 
     # Override this value to specify the number of elements to display at a time

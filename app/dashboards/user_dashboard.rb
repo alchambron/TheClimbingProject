@@ -69,8 +69,6 @@ class UserDashboard < Administrate::BaseDashboard
     birth_date
     center
     is_admin
-    order_courses
-    order_subscriptions
   ].freeze
 
   # COLLECTION_FILTERS
