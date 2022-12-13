@@ -14,14 +14,9 @@
     <script src="https://js.stripe.com/v3/"></script>
   </head>
   <body>
-    <header>
-      <%=render'layouts/navbar'%>
-    </header>
-    <main>
-      <%= yield %>
-    </main>
-    <footer>
-      <%=render'layouts/footer'%>
-    </footer>
+    <%=render'layouts/navbar'%>
+    <%= yield %>
+    <%=render'layouts/footer'%>
+ 
   </body>
 </html>
