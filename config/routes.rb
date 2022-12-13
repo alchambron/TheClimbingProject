@@ -25,6 +25,10 @@ Rails.application.routes.draw do
   scope '/order_courses' do
     post 'book_course', to: 'order_courses#book_course', as: 'order_course_book_course'
   end
+  scope '/order_subscriptions' do
+    post 'book_subscription', to: 'order_subscriptions#book_subscription', as: 'order_subscription_book_subscription'
+  end
+
   resources :order_subscriptions
   resources :restaurations
   resources :coworkings

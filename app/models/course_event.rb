@@ -36,7 +36,7 @@ class CourseEvent
     return available_slots > 0
   end
 
-  def reservation_success
-    return available_slots
+  def has_slots_reserved
+    @course.order_courses.where(date: date, user_id: current_user.id).count > 0
   end
 end
