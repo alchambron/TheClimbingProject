@@ -59,12 +59,12 @@ fr:
         user: Utilisateur
         datetime: Date
         subscription: Abonnement
-        subscription_end_date: Date de fin de l'abonnement
         created_at: Commandé le 
         updated_at: Mis à jour le
       subscription:
         name: Nom
         price: Prix
+        duration: Durée (jours)
         created_at: Date de création
         updated_at: Mis à jour le
         order_subscriptions: Commandes
