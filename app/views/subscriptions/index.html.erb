@@ -1,4 +1,4 @@
-<h2 class="display-6 text-center mb-4">Abonnement Possible</h2>
+<h2 class="display-6 text-center my-4">Abonnement Possible</h2>
 <div class="d-flex justify-content-center  ">
   <div class=" container row row-cols-4 justify-content-center m-5 ">
     <% @subscriptions.each do |info|%>
@@ -7,12 +7,17 @@
           <div class="card-header py-3">
             <h4 class="my-0 fw-normal text-center"><%=info.name%></h4>
           </div>
-          <div class="card-body">
+          <div class="card-body text-center">
             <h1 class="card-title pricing-card-title text-center"><%=info.price%>€<small class="text-muted fw-light"></small></h1>
             <ul class="list-unstyled mt-3 mb-4">
               <li><%=info.description%></li>
             </ul>
-            <%= button_to "S'abonner", order_subscription_book_subscription_path(subscription_id: info.id), method: :post, class:"btn btn-success"%>
+            <div class="d-flex justify-content-center">
+            
+            <% if !user_signed_in? or !current_user.has_active_subscription %>
+            <%= button_to "S'abonner", order_subscription_book_subscription_path(subscription_id: info.id, duration: info.duration), method: :post, class:"btn btn-success"%>
+            <% end %>
+            </div>
           </div>
         </div>
       </div>

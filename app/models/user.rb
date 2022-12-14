@@ -7,4 +7,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+
+
+  def current_subscription
+    order_subscriptions.find{ |order| order.end_date > Date.today}
+  end
+
+  def has_active_subscription
+    !current_subscription.nil?
+  end
 end

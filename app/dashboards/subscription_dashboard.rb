@@ -11,6 +11,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     id: Field::Number,
     description: Field::Text,
     name: Field::String,
+    duration: Field::Number,
     order_subscriptions: Field::HasMany,
     price: Field::Number,
     created_at: Field::DateTime.with_options(
@@ -28,6 +29,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     id
     name
     description
+    duration
     order_subscriptions
   ].freeze
 
@@ -37,6 +39,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     id
     name
     description
+    duration
     price
     created_at
     updated_at
@@ -49,6 +52,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     name
     description
+    duration
     price
   ].freeze
 
