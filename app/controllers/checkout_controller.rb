@@ -1,5 +1,4 @@
 class CheckoutController < ApplicationController
-  # create session stripe
   def create
     course_order = OrderCourse.new(session[:book_course])
     @price = course_order.course.price
@@ -19,7 +18,7 @@ class CheckoutController < ApplicationController
         }
       ],
 
-      success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}', # ajout de l'ID de la session
+      success_url: checkout_success_url + '?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: checkout_cancel_url
     )
 
@@ -34,6 +33,6 @@ class CheckoutController < ApplicationController
   end
 
   def cancel
-    redirect_to(ourses_path, alert: 'Votre paiement a été annulé. Merci de rééssayer.')
+    redirect_to(courses_path, alert: 'Votre paiement a été annulé. Merci de rééssayer.')
   end
 end
