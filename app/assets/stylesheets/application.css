@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  *= require index
- *= require coworking
  *= require simple_calendar
  *= require home_page 
  *= require footer

@@ -14,6 +14,10 @@ h3 {
   font-size: 50px;
 }
 
+h4 .card-text-cache {
+  color: #1976d2;
+}
+
 p {
   font-family: "Archivo", sans-serif;
   font-size: 16px;
@@ -40,6 +44,9 @@ a {
 .btn.btn-success {
   background-color: #7cb083;
 }
+.btn.btn-info {
+  background-color: #1976d2;
+}
 
 .navbar {
   background-color: #81a6aa;
@@ -55,17 +62,16 @@ section {
   background-color: #81a6aa;
 }
 .btn.btn-info {
-  background-color: #81a6aa;
+  background-color: #1976d2;
 }
 .colfoot {
   background-color: #c6b79c;
 }
 
-
-.banpic{
-  object-fit:cover;
- height: 600px;
-width: 100%;
+.banpic {
+  object-fit: cover;
+  height: 600px;
+  width: 100%;
 }
 
 body {
@@ -76,11 +82,13 @@ body {
 
 body .main-container {
   flex: 1;
+  background-color: #bac8ca;
 }
 
-
 .dropdown-toggle::after {
+  content: none;
+}
 
-    content: none;
-   
+button {
+  background-color: #1976d2;
 }
