@@ -53,6 +53,7 @@ fr:
       order_course:
         user: Utilisateur
         course: Cours
+        date: Date du cours
         created_at: Commandé le
         updated_at: Mis à jour le
       order_subscription:
@@ -104,3 +105,16 @@ fr:
         no_attachment: Aucune image
         remove: Supprimer
         replace: Remplacer
+
+
+  date:
+      abbr_day_names: [Dim, Lun, Mar, Mer, Jeu, Ven, Sam]
+      abbr_month_names: [~, Jan, Fév, Mar, Avr, Mai, Jun, Jul, Août, Sep, Oct, Nov, Déc]
+      day_names: [Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi]
+      formats:
+        day_month: "%b %d"
+        default: "%d-%m-%Y"
+        hour: "%H:%M"
+        long: "%A %d %B %Y"
+        long_month: "%d %B %Y"
+        month_abbr: "%d %b %Y"
