@@ -60,3 +60,27 @@ section {
 .colfoot {
   background-color: #c6b79c;
 }
+
+
+.banpic{
+  object-fit:cover;
+ height: 600px;
+width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+
+body .main-container {
+  flex: 1;
+}
+
+
+.dropdown-toggle::after {
+
+    content: none;
+   
+}
