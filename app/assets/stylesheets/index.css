@@ -1,7 +1,7 @@
 .card:hover .card-img-overlay {
   background-color: white;
   position: absolute;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .card-text-cache {
@@ -10,13 +10,13 @@
 
 .card:hover .card-text {
   opacity: 0;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .card:hover .card-text-cache {
-  color: rgb(34, 29, 114);
+  color: #81A6AA;
   opacity: 1;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 
