@@ -12,15 +12,19 @@
       </span>
     </div>
     <div class="card-body">
-      <p class="card-title"> Prénom : <%= @user.first_name %></p>
-      <p class="card-title"> Nom de famille : <%= @user.last_name%></p>
-      <p class="card-title"> Date de naissance : <%= @user.birth_date.strftime("%d-%m-%Y") %></p>
-      <p class="card-title"> Email : <%= @user.email%></p>
-      <% if @user.has_active_subscription %>
-        <p>Votre date de fin d'abonnement : <%= @user.current_subscription.end_date %></p>
-      <% else %>
-      <% end %>
-      <%= button_to 'Modifier mes informations', edit_user_registration_path(@user), method: :get, class: "btn btn-success" %>
+      <div>
+        <p class="card-title"> Prénom : <%= @user.first_name %></p>
+        <p class="card-title"> Nom de famille : <%= @user.last_name%></p>
+        <p class="card-title"> Date de naissance : <%= @user.birth_date.strftime("%d-%m-%Y") %></p>
+        <p class="card-title"> Email : <%= @user.email%></p>
+      </div>
+      <div>
+        <% if @user.has_active_subscription %>
+          <p>Votre date de fin d'abonnement : <%= @user.current_subscription.end_date %></p>
+        <% else %>
+        <% end %>
+        <%= button_to 'Modifier mes informations', edit_user_registration_path(@user), method: :get, class: "btn btn-success" %>
+      </div>
     </div>
   </div>
   <div class="card m-3">
@@ -30,22 +34,71 @@
         <h5 class="m-0"> Historique des mes cours </h5>
       </span>
     </div>
-    <% @user.order_courses.each do |order_course| %>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="card m-3" style="width: 18rem;">
-            <div class="card-header d-flex justify-content-center">
-              <h5> Commande n°<%= order_course.id %></h5>
-            </div>
-            <div class="d-flex flex-column m-2">
-              <p class="mb-0"> Intitulé du cours : <%= order_course.course.name %></p>
-              <p class="mb-0"> Date du cours : <%= order_course.course.start_time.strftime("%d-%m-%Y") %></p>
-              <p class="mb-0"> Prix : <%= order_course.course.price %> €</p>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            Vos cours à venir
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body d-flex flex-column align-items-center">
+            <% if @user.has_course %>
+              <h5 class="m-2">Vous n'avez pas de cours prévu</h5>
+              <%= button_to "Réserver un cours", courses_path, method: :get, class: "btn btn-success" %>
+            <% end %>
+            <div class="row" >
+              <% @user.order_courses.each do |order_course| %>
+                <% if order_course.date > Date.today or order_course.course.start_time > Time.now %>
+                  <div class="col-sm-6">
+                    <div class="card m-3" style="width: 18rem;">
+                      <div class="card-header d-flex justify-content-center">
+                        <h5> Commande n°<%= order_course.id %></h5>
+                      </div>
+                      <div class="d-flex flex-column m-2">
+                        <p class="mb-0"> Intitulé du cours : <%= order_course.course.name %></p>
+                        <p class="mb-0"> Date du cours : <%= order_course.date.strftime("%d/%m/%Y")%> - <%= order_course.course.start_time.strftime("%H:%M") %></p>
+                        <p class="mb-0"> Prix : <%= order_course.course.price %> €</p>
+                      </div>
+                      <div class="m-2 d-flex justify-content-center">
+                        <%= button_to "Annuler votre cours", user_path, class: "btn btn-danger" %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
-    <% end %>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            Toutes vos commandes
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body">
+            <div class="row">
+              <% @user.order_courses.each do |order_course| %>
+                <div class="col-sm-6 d-flex justify-content-center">
+                  <div class="card m-3" style="width: 18rem;">
+                    <div class="card-header d-flex justify-content-center">
+                      <h5> Commande n°<%= order_course.id %></h5>
+                    </div>
+                    <div class="d-flex flex-column m-2">
+                      <p class="mb-0"> Intitulé du cours : <%= order_course.course.name %></p>
+                      <p class="mb-0"> Date du cours : <%= order_course.date.strftime("%d/%m/%Y")%> - <%= order_course.course.start_time.strftime("%H:%M") %></p>
+                      <p class="mb-0"> Prix : <%= order_course.course.price %> €</p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="card m-3">
     <div class="card-header">
@@ -57,8 +110,8 @@
     <div class="container">
       <div class="d-flex align-items-center flex-column m-3">
         <% if !@user.has_active_subscription %>
-          <h5 class="m-2">Vous n'avez pas encore d'abonnement</h5>
-          <%= button_to "Prenez un abonnement", subscriptions_path, class: "btn btn-success" %>
+          <h5 class="m-3 ">Vous n'avez pas encore d'abonnement</h5>
+          <%= button_to "Prenez un abonnement", subscriptions_path, method: :get, class: "btn btn-success" %>
         <% end %>
       </div>
       <div class="row">

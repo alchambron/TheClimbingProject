@@ -10,7 +10,8 @@ class OrderCourseDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     course: Field::BelongsTo,
-    date: Field::Date,
+    date: Field::DateTime.with_options(
+      format: "%d/%m/%Y"),
     user: Field::BelongsTo,
     created_at: Field::DateTime.with_options(
       format: "%d/%m/%Y"),
