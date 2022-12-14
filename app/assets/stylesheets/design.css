@@ -60,3 +60,14 @@ section {
 .colfoot {
   background-color: #c6b79c;
 }
+
+
+.banpic{
+  object-fit:cover;
+ height: 600px;
+width: 100%;
+}
+
+
+
+
