@@ -28,6 +28,7 @@ class CheckoutSubscriptionController < ApplicationController
   def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     OrderSubscription.create(session[:book_subscription])
+
     session[:book_subscription] = nil
     redirect_to(root_path, notice: 'Votre abonnements a été validée et sera traitée dans les plus brefs délais.')
   end

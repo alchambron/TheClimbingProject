@@ -11,7 +11,6 @@ class OrderSubscriptionDashboard < Administrate::BaseDashboard
     id: Field::Number,
     datetime: Field::String,
     subscription: Field::BelongsTo,
-    subscription_end_date: Field::String,
     user: Field::BelongsTo,
     created_at: Field::DateTime.with_options(
       format: "%d/%m/%Y"),
@@ -28,7 +27,6 @@ class OrderSubscriptionDashboard < Administrate::BaseDashboard
     id
     user
     subscription
-    subscription_end_date
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -38,7 +36,6 @@ class OrderSubscriptionDashboard < Administrate::BaseDashboard
     user
     datetime
     subscription
-    subscription_end_date
     created_at
     updated_at
   ].freeze
@@ -49,7 +46,6 @@ class OrderSubscriptionDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     subscription
     user
-    subscription_end_date
   ].freeze
 
   # COLLECTION_FILTERS
