@@ -10,6 +10,7 @@
               <div><%= course_event.course.name %></div>
               <div>(<%= course_event.start_time.strftime("%H:%M") %> - <%= course_event.end_time.strftime("%H:%M") %>)</div>
               <div><span class="badge bg-secondary <%= 'bg-danger' unless course_event.has_available_slots %>">Créneaux disponibles: <%= course_event.available_slots %>/<%= course_event.course.max_attendees %></span></div>
+              <div>Prix: <%= course_event.course.price %>€</div>
             </button>
           </h2>
           <div id="collapse<%= course_event.course.id %>" class="accordion-collapse collapse" aria-labelledby="heading<%= course_event.course.id %>" data-bs-parent="#accordionExample">
