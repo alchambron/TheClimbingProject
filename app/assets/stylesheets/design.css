@@ -30,6 +30,7 @@ p {
 
 h6 {
   line-height: 3;
+  color: #35352e;
 }
 
 a {
@@ -113,3 +114,11 @@ body .main-container {
   background-color: #1976d2;
 }
 
+.link-secondary {
+  color: #35352e!important;
+}
+
+.text-reset {
+  --bs-text-opacity: 0;
+  color: #35352e!important;
+}
