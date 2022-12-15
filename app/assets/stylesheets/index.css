@@ -1,5 +1,5 @@
 .card:hover .card-img-overlay {
-  background-color: white;
+  background-color:  #c6b79c;
   position: absolute;
   transition: 0.5s;
 }
@@ -14,7 +14,7 @@
 }
 
 .card:hover .card-text-cache {
-  color: #81A6AA;
+  color: #4f8844;
   opacity: 1;
   transition: 0.5s;
 }
@@ -27,3 +27,4 @@
     height: 400px;
     padding: 50px;
   }
+
