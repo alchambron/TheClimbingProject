@@ -1,0 +1,34 @@
+.btn.btn-primary {
+  font-family: "Encode Sans", sans-serif;
+  background-color: #2a741b;
+}
+
+.btn.btn-success {
+  background-color: #2a741b;
+}
+
+.btn.btn-info {
+  background-color: #1976d2;
+}
+
+.btn-info {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #38d219;
+  --bs-btn-border-color: #81a6aa;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #81a6aa;
+  --bs-btn-hover-border-color: #81a6aa;
+  --bs-btn-focus-shadow-rgb: 11, 172, 204;
+  --bs-btn-active-color: #81a6aa;
+
+  /* --bs-btn-active-bg: #3dd5f3; */
+  --bs-btn-active-border-color: #0a2413;
+  --bs-btn-active-shadow: inset 0 3px 5pxrgba (0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #81a6aa;
+  --bs-btn-disabled-bg: #81a6aa;
+  --bs-btn-disabled-border-color: #711560;
+}
+
+.btn:first-child:active {
+  background-color: #1976d2;
+}

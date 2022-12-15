@@ -1,18 +1,18 @@
 <div class="flex-column  vh-100 d-flex align-items-center justify-content-center">
   <div class="container-form">
-    <div class="Title">
-      <h2>Log in</h2>
+    <div class="Title text-center">
+      <h2>S'identifier</h2>
     </div>
-    <div class="Form">
+    <div class="Form text-center">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-          <%= f.label :email, class: "input-text" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field"%>
+          <%= f.label :email, class: "input-text text-center" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field text-center m-2"%>
         </div>
         <br>
         <div class="field">
-          <%= f.label :password, class: "input-text" %><br />
-          <%= f.password_field :password, autocomplete: "current-password", class: "input-field"%>
+          <%= f.label :password, class: "input-text text-center" %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: "input-field text-center m-2"%>
         </div>
         <% if devise_mapping.rememberable? %>
           <div class="field">
@@ -22,15 +22,12 @@
         <% end %>
       </div>
       <div class="Validate">
-        <div class="actions">
-          <%= f.submit "Log in", class: "btn-primary hvr-grow" %>
+        <div class="actions d-flex justify-content-around">
+          <%= f.submit "S'identifier", class: "btn-primary hvr-grow m-2 rounded" %>
         </div>
       <% end %>
     </div>
-   
-
-
-
-<%= render "devise/shared/links" %>
+    <div class="text-center">
+      <%= render "devise/shared/links" %></div>
   </div>
 </div>

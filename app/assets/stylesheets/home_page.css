@@ -1,51 +1,46 @@
-@media (max-width:660px) {
-  .jumbotron  {
+@media (max-width: 660px) {
+  .jumbotron {
     display: none;
   }
 }
 
-
-@media (max-width:660px) {
+@media (max-width: 660px) {
   .col-md-4 {
     max-width: 50%;
     max-height: 50%;
   }
 }
 
-@media (max-width:660px) {
+@media (max-width: 660px) {
   .carousel-inner {
     max-width: 100%;
     max-height: 100%;
   }
 }
 
-
- @media screen and (min-width: 660px) {
-.text-center{
+@media screen and (min-width: 660px) {
+  .text-center {
     font-size: auto;
   }
 }
 
-
 @media screen and (max-width: 660px) {
-.text-center{
+  .text-center {
     font-size: 12px;
   }
-} 
+}
 
-
- @media screen and (min-width: 660px) {
-.card-text {
+@media screen and (min-width: 660px) {
+  .card-text {
     font-size: auto;
   }
 }
 
-
 @media screen and (max-width: 660px) {
-.card-text {
+  .card-text {
     font-size: 12px;
   }
-} 
+}
 
 .swiper {
   max-width: 100%;

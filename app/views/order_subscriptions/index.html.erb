@@ -1,7 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Mon Abonnement</h1>
-
 <div id="order_subscriptions">
   <% @order_subscriptions.each do |order_subscription| %>
     <%= render order_subscription %>
@@ -10,5 +8,4 @@
     </p>
   <% end %>
 </div>
-
 <%= link_to "New order subscription", new_order_subscription_path %>

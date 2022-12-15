@@ -24,7 +24,7 @@ class BlocksController < ApplicationController
     @block = Block.new(block_params)
 
     respond_to do |format|
-      if @block.save
+            if @block.save
         format.html { redirect_to block_url(@block), notice: "Block was successfully created." }
         format.json { render :show, status: :created, location: @block }
       else
