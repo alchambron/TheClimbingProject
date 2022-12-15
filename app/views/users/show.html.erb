@@ -22,7 +22,8 @@
       </div>
       <div class="text-center">
         <% if @user.has_active_subscription %>
-          <p><strong> Votre abonnement expire le </strong><br /> <%= @user.current_subscription.end_date.strftime("%d/%m/%Y") %></p>
+          <p><strong> Votre abonnement expire le </strong><br />
+            <%= @user.current_subscription.end_date.strftime("%d/%m/%Y") %></p>
         <% else %>
         <% end %>
       </div>

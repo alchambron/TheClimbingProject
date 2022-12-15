@@ -1,10 +1,7 @@
 <p style="color: green"><%= notice %></p>
-
 <%= render @order_subscription %>
-
 <div>
   <%= link_to "Edit this order subscription", edit_order_subscription_path(@order_subscription) %> |
   <%= link_to "Back to order subscriptions", order_subscriptions_path %>
-
   <%= button_to "Destroy this order subscription", @order_subscription, method: :delete %>
 </div>
