@@ -12,6 +12,7 @@ gem 'table_print'
 gem 'administrate'
 gem 'administrate-field-active_storage'
 gem "image_processing"
+gem 'leaflet-rails'
 gem "aws-sdk-s3", require: false
 
 # Stripe for processing payments
