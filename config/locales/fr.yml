@@ -118,3 +118,8 @@ fr:
         long: "%A %d %B %Y"
         long_month: "%d %B %Y"
         month_abbr: "%d %b %Y"
+  simple_calendar:
+      previous: "<<"
+      next: ">>"
+      week: Semaine
+     
