@@ -2,7 +2,6 @@
   <% if order_course.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(order_course.errors.count, "error") %> prohibited this order_course from being saved:</h2>
-
       <ul>
         <% order_course.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,17 +9,14 @@
       </ul>
     </div>
   <% end %>
-
   <div>
     <%= form.label :course_id, style: "display: block" %>
     <%= form.text_field :course_id %>
   </div>
-
   <div>
     <%= form.label :user_id, style: "display: block" %>
     <%= form.text_field :user_id %>
   </div>
-
   <div>
     <%= form.submit %>
   </div>

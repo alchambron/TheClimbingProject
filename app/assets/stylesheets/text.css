@@ -1,0 +1,33 @@
+h1 {
+  font-family: "Montserrat Black", arial;
+  font-weight: bold;
+  font-size: 64px;
+  color: #35352e;
+}
+
+h2 {
+  font-family: "Epilogue", sans-serif;
+}
+
+h3 {
+  font-family: "Encode Sans", sans-serif;
+  font-size: 50px;
+}
+
+h4 .card-text-cache {
+  color: #1976d2;
+}
+p {
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+}
+
+h6 {
+  line-height: 3;
+  color: #35352e;
+}
+
+a {
+  font-family: "Encode Sans", sans-serif;
+  color: #35352e;
+}

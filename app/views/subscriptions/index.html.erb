@@ -13,10 +13,9 @@
               <li><%=info.description%></li>
             </ul>
             <div class="d-flex justify-content-center">
-            
-            <% if !user_signed_in? or !current_user.has_active_subscription %>
-            <%= button_to "S'abonner", order_subscription_book_subscription_path(subscription_id: info.id, duration: info.duration), method: :post, class:"btn btn-success"%>
-            <% end %>
+              <% if !user_signed_in? or !current_user.has_active_subscription %>
+                <%= button_to "S'abonner", order_subscription_book_subscription_path(subscription_id: info.id, duration: info.duration), method: :post, class:"btn btn-success"%>
+              <% end %>
             </div>
           </div>
         </div>
