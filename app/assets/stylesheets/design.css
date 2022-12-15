@@ -1,0 +1,86 @@
+h1 {
+  font-family: "Montserrat Black", arial;
+  font-weight: bold;
+  font-size: 64px;
+  color: #35352e;
+}
+
+h2 {
+  font-family: "Epilogue", sans-serif;
+}
+
+h3 {
+  font-family: "Encode Sans", sans-serif;
+  font-size: 50px;
+}
+
+p {
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+}
+
+.navbar h6 {
+  font-family: "Encode Sans", sans-serif;
+}
+
+h6 {
+  line-height: 3;
+}
+
+a {
+  font-family: "Encode Sans", sans-serif;
+  color: #35352e;
+}
+
+.btn.btn-primary {
+  font-family: "Encode Sans", sans-serif;
+  background-color: #7cb083;
+}
+
+.btn.btn-success {
+  background-color: #7cb083;
+}
+
+.navbar {
+  background-color: #81a6aa;
+}
+
+section {
+  background-color: #f5ebd8;
+  position: relative;
+
+  bottom: 0;
+}
+.dropdown-menu {
+  background-color: #81a6aa;
+}
+.btn.btn-info {
+  background-color: #81a6aa;
+}
+.colfoot {
+  background-color: #c6b79c;
+}
+
+
+.banpic{
+  object-fit:cover;
+ height: 600px;
+width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+
+body .main-container {
+  flex: 1;
+}
+
+
+.dropdown-toggle::after {
+
+    content: none;
+   
+}

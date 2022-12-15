@@ -17,7 +17,8 @@
  *= require simple_calendar
  *= require home_page 
  *= require footer
+ *= require design
+ *= require course
  *= require show
 
  */
-

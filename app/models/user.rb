@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def has_active_subscription
     !current_subscription.nil?
   end
+
+  def has_course
+    order_courses.count < 1
+  end
 end
