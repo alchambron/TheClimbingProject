@@ -1,5 +1,5 @@
 .card:hover .card-img-overlay {
-  background-color:  #c6b79c;
+  background-color: #c6b79c;
   position: absolute;
   transition: 0.5s;
 }
@@ -19,12 +19,10 @@
   transition: 0.5s;
 }
 
-
 .accordion-event-button {
   flex-flow: column;
 }
-  .carousel-inner{
-    height: 400px;
-    padding: 50px;
-  }
-
+.carousel-inner {
+  height: 400px;
+  padding: 50px;
+}
