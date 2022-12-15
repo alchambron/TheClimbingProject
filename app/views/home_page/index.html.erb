@@ -69,17 +69,21 @@
   </div>
 </div>
 <div>
-  <div class="swiper mySwiper  ">
-    <div class="swiper-wrapper d-flex align-items-start text-center ">
+  <h3 class=" text-center m-5 ">Nos salles</h3>
+</div>
+<div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper d-flex align-items-start text-center">
       <% @center.each do |center| %>
-        <div class="swiper-slide mr-2  ">
+        <div class="swiper-slide mr-2">
           <p><%= center.name %></p>
-          <%= button_to "Voir la salle", center_path(center.id), class: "btn btn-info", method: "get" %>
+          
           <% if center.thumbnail.attached?%>
             <%= image_tag center.thumbnail %>
           <% else %>
-            <img src="climb1.jpg" class="card-img-top" alt="...">
+          <%= image_tag("/assets/climb1.jpg", class: "img-carousel") %>
           <% end %>
+          <%= button_to "Voir la salle", center_path(center.id), class: "btn btn-info btn-index-page ", method: "get" %>
         </div>
       <% end %>
     </div>
@@ -88,4 +92,4 @@
     <div class="swiper-pagination"></div>
   </div>
   <%= javascript_include_tag('homepage.js') %>
-  <%# <script src="homepage.js"></script> %>
+ 
