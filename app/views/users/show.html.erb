@@ -63,7 +63,7 @@
                         <p class="mb-0"> Prix : <%= order_course.course.price %> €</p>
                       </div>
                       <div class="m-2 d-flex justify-content-center">
-                        <%= button_to "Annuler votre cours", user_path, class: "btn btn-danger" %>
+                        <%= button_to "Annuler votre cours", order_course_refund_course_path(course_id: order_course.course.id, date: order_course.date, order_course_id: order_course.id), class: "btn btn-danger" %>
                       </div>
                     </div>
                   </div>
