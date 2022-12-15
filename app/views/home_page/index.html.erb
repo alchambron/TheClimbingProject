@@ -79,9 +79,9 @@
           <p><%= center.name %></p>
           
           <% if center.thumbnail.attached?%>
-            <%= image_tag center.thumbnail %>
+            <%= image_tag center.thumbnail, class: "img-carousel" %>
           <% else %>
-          <%= image_tag("/assets/climb1.jpg", class: "img-carousel") %>
+          <%= image_tag("climb1.jpg", class: "img-carousel") %>
           <% end %>
           <%= button_to "Voir la salle", center_path(center.id), class: "btn btn-info btn-index-page ", method: "get" %>
         </div>
