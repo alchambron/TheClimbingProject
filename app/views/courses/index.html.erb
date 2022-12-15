@@ -1,7 +1,8 @@
 <h3 class="mt-5 text-center">PLANNING DES COURS</h3>
 
-<%= week_calendar(events: @course_events, attribute: :start_time) do |date, course_events| %>
-    <%= date %>
+<div class="container d-flex justify-content-center">
+  <%= week_calendar(events: @course_events, attribute: :start_time) do |date, course_events| %>
+    <%= date.strftime("%d/%m/%Y") %>
     <% course_events.each do |course_event| %>
       <div class="accordion course-event" id="accordion<%= course_event.course.id %>">
         <div class="accordion-item">
@@ -26,4 +27,5 @@
         </div>
       </div>
     <% end %>
-<% end %>
+  <% end %>
+</div>
