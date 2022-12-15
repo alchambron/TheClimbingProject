@@ -40,4 +40,8 @@ class CourseEvent
   def has_slots_reserved(user_id)
     @course.order_courses.where(date: date, user_id: user_id).count > 0
   end
+
+  def is_past
+    start_time < Time.now
+  end
 end

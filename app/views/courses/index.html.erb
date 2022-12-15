@@ -13,6 +13,10 @@
         </h2>
         <div id="collapse<%= course_event.course.id %>" class="accordion-collapse collapse" aria-labelledby="heading<%= course_event.course.id %>" data-bs-parent="#accordionExample">
           <div class="accordion-body">
+          <% if course_event.is_past %>
+            Le cours n'est plus disponible
+          <% else %>
+
             <% if user_signed_in? && course_event.has_slots_reserved(current_user.id) %>
               Vous avez déjà reservé ce créneau.
             <% elsif course_event.has_available_slots %>
@@ -20,6 +24,7 @@
             <% else %>
               Malheureusement il n'y a plus de créneaux disponibles.
             <% end%>
+            <% end %>
           </div>
         </div>
       </div>
