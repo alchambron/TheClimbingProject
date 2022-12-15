@@ -29,6 +29,7 @@ p {
 
 h6 {
   line-height: 3;
+
 }
 
 a {
@@ -59,8 +60,12 @@ section {
   bottom: 0;
 }
 .dropdown-menu {
-  background-color: #81a6aa;
+  background-color: #c6b79c;
+  --bs-dropdown-link-active-bg:  #f5ebd8;
+  --bs-dropdown-link-active-color: rgb(16, 16, 16);
+  --bs-dropdown-link-hover-bg: #f5ebd8;
 }
+
 .btn.btn-info {
   background-color: #1976d2;
 }
@@ -112,3 +117,16 @@ body .main-container {
   background-color: #1976d2;
 }
 
+.container-form{
+
+  padding: 40px;
+  background-color:#c6b79c ;
+  border-radius: 20px;
+}
+
+input[type="date" i] {
+ width: 188px;
+}
+select{
+  width: 188px;
+}
