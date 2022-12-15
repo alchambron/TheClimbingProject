@@ -38,6 +38,11 @@
   <body>
     <%=render'layouts/navbar'%>
     <div class="main-container">
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-primary" role="alert">
+          <%= msg %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
     <%=render'layouts/footer'%>

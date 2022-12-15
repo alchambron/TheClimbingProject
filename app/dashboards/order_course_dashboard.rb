@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class OrderCourseDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -10,12 +10,15 @@ class OrderCourseDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     course: Field::BelongsTo,
+    charge_id: Field::String,
     date: Field::DateTime.with_options(
-      format: "%d/%m/%Y"),
+      format: '%d/%m/%Y'
+    ),
     user: Field::BelongsTo,
     created_at: Field::DateTime.with_options(
-      format: "%d/%m/%Y"),
-    updated_at: Field::DateTime,
+      format: '%d/%m/%Y'
+    ),
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -36,6 +39,7 @@ class OrderCourseDashboard < Administrate::BaseDashboard
     course
     date
     user
+    charge_id
     created_at
     updated_at
   ].freeze

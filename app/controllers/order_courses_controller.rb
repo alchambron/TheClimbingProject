@@ -22,14 +22,29 @@ class OrderCoursesController < ApplicationController
   def edit; end
 
   def book_course
-    if user_signed_in?
-      session[:book_course] =
-  OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
-      redirect_to(checkout_create_path, remote: true)
-    else
+    course = Course.find(params[:course_id])
+    course_event = CourseEvent.new(course, params[:date].to_datetime)
+    unless user_signed_in?
       redirect_to(new_user_session_path)
+      return
+    end
+    return if course_event.is_past
+    session[:book_course] =
+OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
+    redirect_to(checkout_create_path, remote: true)
+  end
+
+  def refund_course
+    course = Course.find(params[:course_id])
+    course_event = CourseEvent.new(course, params[:date].to_datetime)
+    if course_event.is_past
+      return
+    else
+        session[:refund_course] = params[:order_course_id]
+        redirect_to(checkout_refund_path, remote: true) 
     end
   end
+
 
   # POST /order_courses or /order_courses.json
   def create
