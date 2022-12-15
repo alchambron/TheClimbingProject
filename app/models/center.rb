@@ -7,3 +7,4 @@ class Center < ApplicationRecord
   has_many :loisirs
   has_one_attached :thumbnail
 end
+
