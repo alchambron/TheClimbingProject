@@ -1,5 +1,4 @@
 <h3 class="mt-5 text-center">PLANNING DES COURS</h3>
-
 <div class="container d-flex justify-content-center">
   <%= week_calendar(events: @course_events, attribute: :start_time) do |date, course_events| %>
     <%= date.strftime("%d/%m/%Y") %>
@@ -13,15 +12,19 @@
               <div><span class="badge bg-secondary <%= 'bg-danger' unless course_event.has_available_slots %>">Créneaux disponibles: <%= course_event.available_slots %>/<%= course_event.course.max_attendees %></span></div>
             </button>
           </h2>
-         <div id="collapse<%= course_event.course.id %>" class="accordion-collapse collapse" aria-labelledby="heading<%= course_event.course.id %>" data-bs-parent="#accordionExample">
+          <div id="collapse<%= course_event.course.id %>" class="accordion-collapse collapse" aria-labelledby="heading<%= course_event.course.id %>" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-             <% if user_signed_in? && course_event.has_slots_reserved(current_user.id) %>
-                Vous avez déjà reservé ce créneau.
-              <% elsif course_event.has_available_slots %>
-                <%= button_to "Réserver", order_course_book_course_path(course_id: course_event.course.id, date: course_event.date), method: :post, class:"btn btn-success"%>
+              <% if course_event.is_past %>
+                Le cours n'est plus disponible
               <% else %>
-               Malheureusement il n'y a plus de créneaux disponibles.
-              <% end%>
+                <% if user_signed_in? && course_event.has_slots_reserved(current_user.id) %>
+                  Vous avez déjà reservé ce créneau.
+                <% elsif course_event.has_available_slots %>
+                  <%= button_to "Réserver", order_course_book_course_path(course_id: course_event.course.id, date: course_event.date), method: :post, class:"btn btn-success"%>
+                <% else %>
+                  Malheureusement il n'y a plus de créneaux disponibles.
+                <% end%>
+              <% end %>
             </div>
           </div>
         </div>
