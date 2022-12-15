@@ -12,12 +12,18 @@
  *
  *= require_tree .
  *= require_self
+
  *= require index
  *= require simple_calendar
  *= require home_page 
  *= require footer
- *= require design
  *= require course
  *= require show
+ *= require text
+ *= require banner
+ *= require body
+ *= require button
+ *= require navbar
+ *= require text
 
  */

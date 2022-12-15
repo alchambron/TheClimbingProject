@@ -6,55 +6,50 @@ By default, the navigation contains navigation links
 for all resources in the admin dashboard,
 as defined by the routes in the `admin/` namespace
 %>
-
 <nav class="navigation" role="navigation">
   <%= link_to(t("administrate.navigation.back_to_app"), root_url, class: "button button--alt button--nav") if defined?(root_url) %>
-
-<h3> Fonctionnements </h3>
-<hr>
-  <% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %> 
-  <% if display_resource_name(resource) != "Coworkings" and 
+  <h3> Fonctionnements </h3>
+  <hr>
+  <% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %>
+    <% if display_resource_name(resource) != "Coworkings" and 
     display_resource_name(resource) != "Loisirs" and
     display_resource_name(resource) != "Relaxations" and
     display_resource_name(resource) != "Restaurations" and 
     display_resource_name(resource) != "Commandes Cours" and 
     display_resource_name(resource) != "Commandes Abonnements" %>
-
     <%= link_to(
       display_resource_name(resource),
       resource_index_route(resource),
       class: "navigation__link navigation__link--#{nav_link_state(resource)}"
     ) if accessible_action?(model_from_resource(resource), :index) %>
-    <% end %>
   <% end %>
+<% end %>
 <hr>
 <h3> Historique des commandes</h3>
 <hr>
-<% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %> 
+<% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %>
   <% if display_resource_name(resource) == "Commandes Cours" or
   display_resource_name(resource) == "Commandes Abonnements" %>
-    <%= link_to(
+  <%= link_to(
       display_resource_name(resource),
       resource_index_route(resource),
       class: "navigation__link navigation__link--#{nav_link_state(resource)}"
     ) if accessible_action?(model_from_resource(resource), :index) %>
-    <% end %>
-  <% end %>
-
+<% end %>
+<% end %>
 <hr>
 <h3> Personnalisation</h3>
 <hr>
-<% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %> 
+<% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %>
   <% if display_resource_name(resource) == "Loisirs" or
   display_resource_name(resource) == "Relaxations" or 
   display_resource_name(resource) == "Restaurations" or 
   display_resource_name(resource) == "Coworkings" %>
-    <%= link_to(
+  <%= link_to(
       display_resource_name(resource),
       resource_index_route(resource),
       class: "navigation__link navigation__link--#{nav_link_state(resource)}"
     ) if accessible_action?(model_from_resource(resource), :index) %>
-    <% end %>
-  <% end %>
-
+<% end %>
+<% end %>
 </nav>
