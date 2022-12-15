@@ -1,0 +1,28 @@
+.navbar h6 {
+  font-family: "Encode Sans", sans-serif;
+  margin: 0;
+}
+.navbar {
+  background-color: #81a6aa;
+}
+.dropdown-menu {
+  background-color: #c6b79c;
+  --bs-dropdown-link-active-bg: #f5ebd8;
+  --bs-dropdown-link-active-color: rgb(16, 16, 16);
+  --bs-dropdown-link-hover-bg: #f5ebd8;
+}
+.dropdown-toggle::after {
+  content: none;
+}
+.nav-link {
+  --bs-nav-link-color: #35352e;
+}
+
+.navbar-nav {
+  h6 {
+    &:hover {
+      color: rgb(16, 16, 16);
+    }
+  }
+  --bs-nav-link-hover-color: rgb(16, 16, 16);
+}
