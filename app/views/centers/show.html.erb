@@ -1,26 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
-
-       <div class=" text-left py-5 ">
+   <div class=" text-center py-5 ">
           <h3> Climbing Project: <%= @center.name %></h3>
           
        </div>
-       <div class="d-flex">
+      
+       <div class="map-sizing d-flex m-4">
           <div class="w-50 d-flex flex-row align-items-center text-center m-3">
             <p><%= @center.description %>.</p>
          </div>
-
-         <div class=" w-50 m-2">
-         <p>Vous pouvez nous retrouvez ici : </p>
-         <%= @center.latitude %> 
-         <%= @center.longitude %>
           
+         <div class=" w-50 m-2">
+         <h5>Vous pouvez nous retrouvez ici : </h5>
+         <div id="map" data-longitude="<%= @center.longitude %>" data-latitude="<%= @center.latitude %>" class="border border-dark rounded h-75"></div>
+         
+         
+         
          </div>
        </div>
 
-    <div class="d-flex">
-      <div class="row">
-         <div class=""col-lg>
+    <div class="d-flex justify-content-center">
+      <div class="text-center">
+         <div class="col-lg">
            <h5>Infos pratiques: </h5>
          </div>
             <div class="col-lg align-items-end ">
@@ -29,6 +28,11 @@
             </div>
       </div>
     </div>
-  
+   
+
+    <%= javascript_include_tag('leaflet.js') %>
+    
+
+     
 
 
