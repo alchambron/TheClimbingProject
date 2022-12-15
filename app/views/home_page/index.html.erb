@@ -8,7 +8,7 @@
   <h3 class=" text-center m-5 ">Nos services</h3>
 </div>
 <!--Card de nos services-->
-<div class="album py-5 bg-light">
+<div class="album ">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -16,8 +16,8 @@
           <%= image_tag("climb2.jpg", class: "card-img-top") %>
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> BLOCS</h2>
-            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Reservez une sale d'escalade", blocks_path %> </h4>
-            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+            <h4 class="card-text-cache d-flex justify-content-center align-items-center"><%= link_to "Decouverte des blocs", blocks_path %> </h4>
+       
           </div>
         </div>
       </div>
@@ -26,8 +26,8 @@
           <%= image_tag("climb3.png", class: "card-img-top") %>
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> VOIES</h2>
-            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Reservez une sale d'escalade", routes_path %> </h4>
-            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Decouverte des voies", routes_path %> </h4>
+     
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> FOOD</h2>
             <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim?", restaurations_path %> </h4>
-            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+           
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> DETENTE</h2>
             <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "  Espace détente", relaxations_path %></h4>
-            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+            
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> COWORKING</h2>
             <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to " Espace coworking", coworkings_path %></h4>
-            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+            
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> LOISIRS</h2>
             <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to "Espace loisirs", loisirs_path %></h4>
-            <h6 class="card-text-cache d-flex justify-content-center">Climbing Project</h6>
+            
           </div>
         </div>
       </div>
@@ -75,10 +75,10 @@
   </div>
 </div>
 <div>
-  <div class="swiper mySwiper ">
-    <div class="swiper-wrapper d-flex align-items-center text-center">
+  <div class="swiper mySwiper  ">
+    <div class="swiper-wrapper d-flex align-items-start text-center ">
       <% @center.each do |center| %>
-        <div class="swiper-slide ">
+        <div class="swiper-slide mr-2  ">
           <p><%= center.name %></p>
           <%= button_to "Voir la salle", center_path(center.id), class: "btn btn-info", method: "get" %>
           <% if center.thumbnail.attached?%>

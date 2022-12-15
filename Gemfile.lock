@@ -172,6 +172,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    leaflet-rails (1.9.2)
+      rails (>= 4.2.0)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -354,6 +356,7 @@ DEPENDENCIES
   image_processing
   jbuilder
   jsbundling-rails
+  leaflet-rails
   pg (~> 1.1)
   pry
   puma (~> 5.0)
