@@ -46,8 +46,8 @@ class CenterDashboard < Administrate::BaseDashboard
     id
     name
     description
-    latitude
     longitude
+    latitude
     users
     thumbnail
     created_at
@@ -60,8 +60,8 @@ class CenterDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     name
     description
-    latitude
     longitude
+    latitude
     thumbnail
   ].freeze
 
