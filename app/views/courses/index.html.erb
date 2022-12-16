@@ -7,10 +7,10 @@
         <div class="accordion-item">
           <h2 class=" accordion-header" id="heading<%= course_event.course.id %>">
             <button class="accordion-button collapsed accordion-event-button <%= "reservation-success" if user_signed_in? && course_event.has_slots_reserved(current_user.id) %>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= course_event.course.id %>" aria-expanded="false" aria-controls="collapse<%= course_event.course.id %>">
-              <div><%= course_event.course.name %></div>
-              <div>(<%= course_event.start_time.strftime("%H:%M") %> - <%= course_event.end_time.strftime("%H:%M") %>)</div>
-              <div><span class="badge bg-secondary <%= 'bg-danger' unless course_event.has_available_slots %>">Créneaux disponibles: <%= course_event.available_slots %>/<%= course_event.course.max_attendees %></span></div>
-              <div  text-decoration-underline">Prix: <%= course_event.course.price %>€</div>
+              <div class="m-2"><%= course_event.course.name %></div>
+              <div class="m-2">(<%= course_event.start_time.strftime("%H:%M") %> - <%= course_event.end_time.strftime("%H:%M") %>)</div>
+              <div class="m-2"><span class="badge bg-secondary <%= 'bg-danger' unless course_event.has_available_slots %>">Créneaux disponibles: <%= course_event.available_slots %>/<%= course_event.course.max_attendees %></span></div>
+              <div class="m-2 text-decoration-underline">Prix: <%= course_event.course.price %>€</div>
             </button>
           </h2>
           <div id="collapse<%= course_event.course.id %>" class="accordion-collapse collapse" aria-labelledby="heading<%= course_event.course.id %>" data-bs-parent="#accordionExample">
