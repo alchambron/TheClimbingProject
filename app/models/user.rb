@@ -8,9 +8,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
-
   def current_subscription
-    order_subscriptions.find{ |order| order.end_date > Date.today}
+    order_subscriptions.find { |order| order.end_date > Date.today }
   end
 
   def has_active_subscription
@@ -19,5 +18,9 @@ class User < ApplicationRecord
 
   def has_course
     order_courses.count < 1
+  end
+
+  def future_courses
+    order_courses.filter{ |order_course| order_course.is_future} 
   end
 end
