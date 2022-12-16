@@ -27,12 +27,30 @@ class CheckoutController < ApplicationController
 
   def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
-    OrderCourse.create(session[:book_course])
+    final_order_course = OrderCourse.new(session[:book_course])
+    final_order_course.charge_id = Stripe::PaymentIntent.retrieve(@session[:payment_intent])[:latest_charge]
+    final_order_course.save
     session[:book_course] = nil
     redirect_to(courses_path, notice: 'Votre commande est validée et sera traitée dans les plus brefs délais.')
   end
 
   def cancel
     redirect_to(courses_path, alert: 'Votre paiement a été annulé. Merci de rééssayer.')
+  end
+
+  def refund
+    refund_order = OrderCourse.find(session[:refund_course])
+    @refund_session = Stripe::Refund.create(
+      {
+        charge: refund_order.charge_id
+      }
+    )
+    if !@refund_session[:status] == "succeeded"
+      redirect_to user_path(refund_order.user.id), alert: "Une erreur est apparu, contacter l'administrateur."
+    else
+      redirect_to user_path(refund_order.user.id), notice: "Votre cours à bien été annulé, vous serez remboursé dans les 7 prochains jours."
+      refund_order.destroy
+    end
+
   end
 end
