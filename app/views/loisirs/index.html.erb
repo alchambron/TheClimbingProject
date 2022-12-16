@@ -1,52 +1,17 @@
-<div class="container text-center">
-  <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse ">
-    <div class="col col-12 col-sm-6 ">
-      <%= image_tag("arcade.jpg", class: "mt-4 mb-4 w-100 ")%>
+<div class="d-flex container-fluid text-center flex-column ">
+  <%@loisirs.each do |loisir|%>
+    <div class="  border w-100 d-flex align-items-center flex-column flex-sm-row ">
+      <div class="w-100 m-3">
+        <%= image_tag("arcade.jpg", class:"w-100")%>
+      </div>
+      <div class="d-flex flex-column justify-content-center w-100">
+        <div class="d-flex mt-1 text-center justify-content-center">
+          <p><%= loisir.title %></p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <p><%= loisir.content%></p>
+        </div>
+      </div>
     </div>
-    <div class="col col-12 col-sm-6 mt-4">
-      <p>ARCADE</p>
-      <p>Un jeu d'arcade est une machine de divertissement public, les salles d’arcade à
-        l'origine était d'abord mécaniques, puis électroniques et enfin vidéo. Il existe différents types de jeux d'arcade
-        , les principaux sont les jeux vidéo d'arcade, les flippers</p>
-    </div>
-  </div>
-  <div class="row m-3 border d-flex align-items-center">
-    <div class="col col-12 col-sm-6 ">
-      <%= image_tag("baby.jpg", class: "mt-4 mb-4 w-100  ")%>
-    </div>
-    <div class="col col-12 col-sm-6 mt-4">
-      <p>BABY-FOOT</p>
-      <p>Le baby-foot ou football de table par la fédération française, est un jeu simulant une partie de football 
-        sur une table et opposant généralement deux équipes de deux joueurs ou un joueur à un autre. La table, nommée elle aussi baby-foot, 
-        est constituée d'un plateau représentant le terrain, au-dessus et en travers duquel se déplacent huit barres qui supportent les onze
-        figurines de chaque équipe appelées joueurs.
-      </p>
-    </div>
-  </div>
-  <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse">
-    <div class="col col-12 col-sm-6">
-      <%= image_tag("billard.jpg", class: "mt-4 mb-4 w-100")%>
-    </div>
-    <div class="col col-12 col-sm-6 mt-4 ">
-      <P>BILLARD</P>
-      <p>Au début du jeu, les billes (et quilles selon le jeu) sont positionnées sur le tapis sur la mouche leur correspondant.
-        Pour certains jeux, un certain nombre de billes (souvent 15) peuvent être regroupées dans un triangle ou losange.
-        Le premier coup s'appelle alors la casse et consiste à éclater de manière plus ou moins importante le triangle de billes.
-        On distingue trois types de comptage de points, modifiant le but du jeu : en fonction du coup (tables françaises),
-        en fonction de la valeur de la bille empochée (billards à poches), en fonction des quilles renversées (bouchon ou 5-quilles).</p>
-    </div>
-  </div>
-  <div class="row m-3 border d-flex align-items-center">
-    <div class="col col-12 col-sm-6 ">
-      <%= image_tag("flechette.jpg", class: "mt-4 mb-4 w-100 ")%>
-    </div>
-    <div class="col col-12 col-sm-6 mt-4">
-      <p>FLECHETTE</p>
-      <p>Le but du jeu est de mettre, dans l'ordre, une fléchette dans chaque segment de la cible.
-        On commence par viser le 1, quand on a réussi, on passe au 2 et ainsi de suite jusqu'au vingt puis le bull (partie à 25 points).
-        On recommence ensuite avec les doubles et enfin les triples pour corser le jeu.</p>
-    </div>
-  </div>
+  <%end%>
 </div>
-</body>
-</html>
