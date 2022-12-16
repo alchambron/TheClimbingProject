@@ -17,7 +17,7 @@
           <h6><%= link_to "Cours", courses_path, class: "nav-link" %></h6>
         </li>
         <li class="nav-item">
-          <h6><%= link_to "Abonnement", subscriptions_path, class: "nav-link" %></h6>
+          <h6><%= link_to "Abonnements", subscriptions_path, class: "nav-link" %></h6>
         </li>
         <% if user_signed_in? && current_user.is_admin %>
           <li class="nav-item dropdown">
