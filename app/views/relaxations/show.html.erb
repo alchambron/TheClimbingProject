@@ -1,0 +1,17 @@
+<div class="d-flex container-fluid text-center flex-column ">
+  <%@relaxation.each do |relax|%>
+    <div class="  border w-100 d-flex align-items-center flex-column flex-sm-row ">
+      <div class="w-100 m-3">
+        <%= image_tag("jacuzzi.jpg", class:"w-100")%>
+      </div>
+      <div class="d-flex flex-column justify-content-center w-100">
+        <div class="d-flex mt-1 text-center justify-content-center">
+          <p><%= relax.title %></p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <p><%= relax.content%></p>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
