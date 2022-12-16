@@ -88,6 +88,7 @@
   <h3 class=" text-center m-5 ">Nos salles</h3>
 </div>
 <div>
+<div class="swiper-container">
   <div class="swiper mySwiper">
     <div class="swiper-wrapper d-flex align-items-start text-center">
       <% @center.each do |center| %>
@@ -102,8 +103,11 @@
         </div>
       <% end %>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+     
+  </div>
+   <div class="swiper-pagination"></div>
+  </div>
   </div>
   <%= javascript_include_tag('homepage.js') %>

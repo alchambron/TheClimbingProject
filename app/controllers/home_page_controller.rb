@@ -1,5 +1,5 @@
 class HomePageController < ApplicationController
   def index
-    @center = Center.all
+    @center = Center.all + Center.all
   end
 end
