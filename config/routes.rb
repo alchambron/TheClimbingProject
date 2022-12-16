@@ -24,8 +24,12 @@ Rails.application.routes.draw do
   resources :subscriptions
   devise_for :users
   resources :users
-  resources :courses
   resources :order_courses
+
+  scope '/courses' do
+    get '/', to: redirect("/courses/1"), as: 'courses'
+    get ":center_id", to: 'courses#index', as: 'courses_from_center'
+  end
 
   scope '/order_courses' do
     post 'book_course', to: 'order_courses#book_course', as: 'order_course_book_course'

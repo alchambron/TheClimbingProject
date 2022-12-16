@@ -1,4 +1,7 @@
 <h3 class="mt-5 text-center">PLANNING DES COURS</h3>
+<div class="d-flex justify-content-center">
+  <%= select_tag "center", options_from_collection_for_select(Center.all, :id, :name, :selected => @center_id), :onchange => "goToCenterCourses(this.value)"%>
+</div>
 <div class="container d-flex justify-content-center">
   <%= week_calendar(events: @course_events, attribute: :start_time) do |date, course_events| %>
     <%= date.strftime("%d/%m/%Y") %>
@@ -33,3 +36,4 @@
     <% end %>
   <% end %>
 </div>
+<%= javascript_include_tag('courses.js') %>
