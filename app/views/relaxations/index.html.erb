@@ -1,42 +1,44 @@
-<div class="container text-center">
-  <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse ">
-    <div class="col col-12 col-sm-6 ">
-      <%= image_tag("hamam.jpg", class:"mb-3 mt-4 w-100")%>
-    </div>
-    <div class="col col-12 col-sm-6 mt-1  ">
-      <p>HAMMAM</p>
-      <p>La chaleur et l'umidité présente en grande quantité dans le hammam permettent l'ouverture de vos pores
-        contribuant ainsi
-        un nettoyage en profondeur de votre peau. Celle-ci aura alors un aspect plus doux et plus net et pourra être
-        complété
-        par un soin du visage ou du corps comme un gommage pour encore plus de douceur.</p>
-    </div>
-  </div>
-  <div class="row m-3 border d-flex align-items-center d-flex ">
-    <div class="col col-12 col-sm-6">
-      <%= image_tag("jacuzzi.jpg", class:" mb-3 mt-4 w-100 ")%>
-    </div>
-    <div class="col col-12 col-sm-6 mt-1 ">
-      <p>JACUZZI</p>
-      <p>L’eau chaude et les jets hydromassants permettent d’augmenter le flux sanguin. L’amélioration de la
-        circulation sanguine
-        va avoir des effets bienfaisants sur les migraines, le cœur, la tension artérielle, les douleurs de dos, les
-        courbatures, l’arthrite, les varices, les douleurs chroniques …</p>
-    </div>
+<div class="container-bloc">
+  <div class="top-coworking text-center py-5 ">
+    <h1> Detente</h1>
+    <%= link_to "Se connecter pour voir l'espace de votre salle", new_user_session_path, class: "btn-primary hvr-grow m-2 rounded" %>
   </div>
   <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse">
-    <div class="col col-12 col-sm-6">
-      <%= image_tag("sauna.jpg", class:"mb-3 mt-4 w-100")%>
+    <div class="col col-12 col-sm-6 mt-4">
+      <p>
+        HAMMAM:</p>
+      <p>Le hammam est une invitation à la relaxation : c'est un excellent moyen de se détendre, de faire le vide et d'oublier ses soucis.
+        La vapeur chaude a un effet bénéfique sur la peau : elle ouvre les pores, élimine les toxines, les saletés et les bactéries, apaise les douleurs musculaires, ouvre les sinus et facilite la respiration.
+        La sensation de chaleur plonge le corps dans un état de léthargie. Le hammam peut donc vous aider à lutter contre les troubles du sommeil. Contrairement à ce qu'on pourrait imaginer, la douche froide à la sortie du hammam sera très agréable et revigorante. Vous sortirez du hammam déstressé avec une véritable sensation de bien-être.
+        Si vous souffrez de problèmes de circulation sanguine, alternez régulièrement le bain turc avec une douche froide pour stimuler la circulation du sang.
+      </p>
     </div>
-    <div class="col col-12 col-sm-6 mt-1">
-      <P>SAUNA</P>
-      <p>Connu pour ses bienfaits antistress, il est aussi réputé pour être une aide au sommeil mais aussi un remède
-        aux
-        problèmes de peau (acné, psoriasis, eczéma, urticaire). Contrairement au hammam, la chaleur dans un sauna
-        reste sèche
-        (entre 3% et 20% d'humidité) pour une température d'utilisation idéale de 80°c.</p>
+    <div class="col col-12 col-sm-6">
+      <%= image_tag("hamam.jpg", class: "mb-3 mt-4 w-100") %>
     </div>
   </div>
 </div>
-</body>
-</html>
+<div class="row m-3 border d-flex align-items-center d-flex flex-row">
+  <div class="col col-12 col-sm-6 mt-4">
+    <p>
+      JACUZZI:</p>
+    <p>L'eau chaude et les jets hydromassants permettent d'augmenter le flux sanguin. L'amélioration de la circulation sanguine va avoir des effets bienfaisants sur les migraines,
+      le cœur, la tension artérielle, les douleurs de dos, les courbatures, l'arthrite, les varices, les douleurs chroniques
+    </p>
+  </div>
+  <div class="col col-12 col-sm-6">
+    <%= image_tag("jacuzzi.jpg", class: "mb-3 mt-4 w-100") %>
+  </div>
+</div>
+<div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse">
+  <div class="col col-12 col-sm-6 mt-4">
+    <p>
+      SAUNA:</p>
+    <p>Stimule la circulation sanguine. Aide au bon fonctionnement du système cardio-vasculaire. Il aide également à maintenir la pression artérielle à un niveau faible.
+      Détend les muscles, soulage rapidement les muscles après une séance de sport
+    </p>
+  </div>
+  <div class="col col-12 col-sm-6">
+    <%= image_tag("sauna.jpg", class: "mb-3 mt-4 w-100") %>
+  </div>
+</div>

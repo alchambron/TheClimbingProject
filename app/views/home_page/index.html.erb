@@ -34,7 +34,11 @@
           <%= image_tag("hamburger.jpg", class: "card-img-top ") %>
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> FOOD</h2>
-            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim?", restaurations_path %> </h4>
+            <% if !user_signed_in? %>
+              <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim?", restaurations_path %> </h4>
+            <% else %>
+              <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Une petite faim dans votre salle ?", restauration_path(current_user.center.id) %> </h4>
+            <% end %>
           </div>
         </div>
       </div>
@@ -43,7 +47,11 @@
           <%= image_tag("spa.jpg", class: "card-img-top") %>
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> DETENTE</h2>
-            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "  Espace détente", relaxations_path %></h4>
+            <% if !user_signed_in? %>
+            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Espace détente", relaxations_path %></h4>
+            <% else %>
+            <h4 class="card-text-cache d-flex justify-content-center"><%= link_to "Espace détente dans votre salle", relaxation_path(current_user.center.id) %></h4>
+            <% end %>
           </div>
         </div>
       </div>
@@ -52,7 +60,11 @@
           <%= image_tag("cow.jpg", class: "card-img-top") %>
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> COWORKING</h2>
+            <% if !user_signed_in? %>
             <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to " Espace coworking", coworkings_path %></h4>
+            <% else %>
+            <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to " Espace coworking dans votre salle", coworking_path(current_user.center.id) %></h4>
+            <% end %>
           </div>
         </div>
       </div>
@@ -61,7 +73,11 @@
           <%= image_tag("loisirs.jpg", class: "card-img-top") %>
           <div class="card-img-overlay">
             <h2 class="card-text d-flex justify-content-start "> LOISIRS</h2>
+            <% if !user_signed_in? %>
             <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to "Espace loisirs", loisirs_path %></h4>
+            <% else %>
+            <h4 class="card-text-cache d-flex justify-content-center"> <%= link_to "Espace loisirs dans votre salle", loisir_path(current_user.center.id) %></h4>
+            <% end %>
           </div>
         </div>
       </div>
@@ -77,11 +93,10 @@
       <% @center.each do |center| %>
         <div class="swiper-slide mr-2">
           <p><%= center.name %></p>
-          
           <% if center.thumbnail.attached?%>
             <%= image_tag center.thumbnail, class: "img-carousel" %>
           <% else %>
-          <%= image_tag("climb1.jpg", class: "img-carousel") %>
+            <%= image_tag("climb1.jpg", class: "img-carousel") %>
           <% end %>
           <%= button_to "Voir la salle", center_path(center.id), class: "btn btn-info btn-index-page ", method: "get" %>
         </div>
@@ -92,4 +107,3 @@
     <div class="swiper-pagination"></div>
   </div>
   <%= javascript_include_tag('homepage.js') %>
- 
