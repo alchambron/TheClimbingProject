@@ -4,7 +4,10 @@
       <h2>S'identifier</h2>
     </div>
     <div class="Form text-center">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+        <% resource.errors.full_messages.each do |msg| %>
+          <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
         <div class="field">
           <%= f.label :email, class: "input-text text-center" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field text-center m-2"%>
