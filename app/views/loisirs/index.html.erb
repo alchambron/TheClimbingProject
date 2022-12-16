@@ -1,17 +1,52 @@
-<div class="d-flex container-fluid text-center flex-column ">
-  <%@loisirs.each do |loisir|%>
-    <div class="  border w-100 d-flex align-items-center flex-column flex-sm-row ">
-      <div class="w-100 m-3">
-        <%= image_tag("arcade.jpg", class:"w-100")%>
-      </div>
-      <div class="d-flex flex-column justify-content-center w-100">
-        <div class="d-flex mt-1 text-center justify-content-center">
-          <p><%= loisir.title %></p>
-        </div>
-        <div class="d-flex justify-content-center">
-          <p><%= loisir.content%></p>
-        </div>
-      </div>
+<div class="container-bloc">
+  <div class="top-coworking text-center py-5 ">
+    <h1> Loisirs</h1>
+    <%= link_to "Se connecter pour voir l'espace de votre salle", new_user_session_path, class: "btn-primary hvr-grow m-2 rounded" %>
+  </div>
+  <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse">
+    <div class="col col-12 col-sm-6 mt-4">
+      <p>
+        BABY-FOOT:</p>
+      <p>Le baby-foot ou babyfoot, soccer sur/de table ou football sur/de table, kicker ou encore foot-foot et officiellement dénommé football de table par la fédération française,
+        est un jeu simulant une partie de football sur une table et opposant généralement deux équipes de deux joueurs ou un joueur à un autre
+      </p>
     </div>
-  <%end%>
+    <div class="col col-12 col-sm-6">
+      <%= image_tag("baby.jpg", class: "mb-3 mt-4 w-100") %>
+    </div>
+  </div>
+  <div class="row m-3 border d-flex align-items-center d-flex flex-row">
+    <div class="col col-12 col-sm-6 mt-4">
+      <p>
+        BILLARD:</p>
+      <p>Le billard est un jeu d'adresse à un ou plusieurs joueurs qui se pratique sur une table, recouverte d'un tissu et bordée de bandes,
+        sur laquelle on fait rouler des boules que l'on frappe à l'aide d'une queue.</p>
+    </div>
+    <div class="col col-12 col-sm-6">
+      <%= image_tag("billard.jpg", class: "mb-3 mt-4 w-100") %>
+    </div>
+  </div>
+  <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse">
+    <div class="col col-12 col-sm-6 mt-4">
+      <p>
+        FLECHETTE:</p>
+      <p>Les fléchettes sont un jeu d'adresse consistant à jeter des projectiles munis d'une pointe sur une cible.
+      </p>
+    </div>
+    <div class="col col-12 col-sm-6">
+      <%= image_tag("flechette.jpg", class: "mb-3 mt-4 w-100") %>
+    </div>
+  </div>
+  <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse">
+    <div class="col col-12 col-sm-6 mt-4">
+      <p>
+        ARCADE:</p>
+      <p>Un jeu d'arcade est une machine de divertissement le plus souvent munie d'un monnayeur, qui peut être mise à disposition du public au sein de divers établissements,
+        tels les salles d'arcade, salles de jeux, bars, restaurants, cinémas, centres commerciaux, parc d'attractions ou encore des centres de divertissement
+      </p>
+    </div>
+    <div class="col col-12 col-sm-6">
+      <%= image_tag("arcade.jpg", class: "mb-3 mt-4 w-100") %>
+    </div>
+  </div>
 </div>

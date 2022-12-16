@@ -1,19 +1,30 @@
-<%# Creating Variable %>
-<% @restauration.each do |restauration| %>
-  <div class="container-fluid column d-flex align-items-center">
-    <div class="d-flex justify-content-center w-50 row">
-      <%= image_tag("restaurant.jpg", class: "m-3")%>
-      <%= image_tag("huuum.jpg", class: "m-3")%>
+<div class="container-bloc">
+  <div class="top-coworking text-center py-5 ">
+    <h1> Restauration</h1>
+    <%= link_to "Se connecter pour voir l'espace de votre salle", new_user_session_path, class: "btn-primary hvr-grow m-2 rounded" %>
+  </div>
+  <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse">
+    <div class="col col-12 col-sm-6 mt-4">
+      <p>
+        cuisine:</p>
+      <p>La cuisine est l'ensemble des techniques de préparation des aliments en vue de leur consommation par les êtres humains que l'on a appelé précédemment 
+      « la cuisinerie ». La cuisine est diverse à travers le monde. Nos cuisiniers travaillent dur pour vous préparer de trés bon plat gustatif et quantitatif
+
+      </p>
     </div>
-    <div class="mx-3 w-50">
-      <div class="d-flex">
-        <div class="d-flex text-center p-3 ">
-          <p><%= restauration.content %></p>
-        </div>
-      </div>
-      <div class="">
-        <%= image_tag("menu.png", class: "img-fluid") %>
-      </div>
+    <div class="col col-12 col-sm-6">
+      <%= image_tag("cuisine.jpg", class: "mb-3 mt-4 w-100") %>
     </div>
   </div>
-<% end %>
+  <div class="row m-3 border d-flex align-items-center d-flex flex-row">
+    <div class="col col-12 col-sm-6 mt-4">
+      <p>
+        Salle:</p>
+      <p>Endroit chaud et chaleureux ou vous pouvez venir deguster nos plats et vous ressoursser seul ou acompagné afin de partager un bon moment
+      </p>
+    </div>
+    <div class="col col-12 col-sm-6">
+      <%= image_tag("salle.jpg", class: "mb-3 mt-4 w-100") %>
+    </div>
+  </div>
+</div>
