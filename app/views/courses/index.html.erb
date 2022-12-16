@@ -1,4 +1,12 @@
 <h3 class="mt-5 text-center">PLANNING DES COURS</h3>
+<div class="d-flex justify-content-center">
+  <%= form_with center: @centers do |form| %>
+    <div class="d-flex flex-column text-center">
+      <%= form.label :"Choisissez votre salle" %>
+      <%= form.collection_select :center, Center.all, :id, :name %>
+    </div>
+  <% end %>
+</div>
 <div class="container d-flex justify-content-center">
   <%= week_calendar(events: @course_events, attribute: :start_time) do |date, course_events| %>
     <%= date.strftime("%d/%m/%Y") %>

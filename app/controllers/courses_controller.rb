@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
     monday_date = params.fetch(:start_date, Date.today).to_date.beginning_of_week(:monday)
     courses = Course.all
     @course_events = courses.map { |c| CourseEvent.from_course(c, monday_date) }
+    @centers = Center.all
   end
 
   # GET /courses/1 or /courses/1.json
