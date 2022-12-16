@@ -63,3 +63,8 @@
   transition: 0.4s;
   transform: scale(1.05);
 }
+
+.swiper-container{
+  padding-bottom: 50px;
+  position: relative;
+}
