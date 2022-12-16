@@ -1,42 +1,17 @@
-<div class="container text-center">
-  <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse ">
-    <div class="col col-12 col-sm-6 ">
-      <%= image_tag("hamam.jpg", class:"mb-3 mt-4 w-100")%>
+<div class="d-flex container-fluid text-center flex-column ">
+  <%@relaxations.each do |relax|%>
+    <div class="  border w-100 d-flex align-items-center flex-column flex-sm-row ">
+      <div class="w-100 m-3">
+        <%= image_tag("jacuzzi.jpg", class:"w-100")%>
+      </div>
+      <div class="d-flex flex-column justify-content-center w-100">
+        <div class="d-flex mt-1 text-center justify-content-center">
+          <p><%= relax.title %></p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <p><%= relax.content%></p>
+        </div>
+      </div>
     </div>
-    <div class="col col-12 col-sm-6 mt-1  ">
-      <p>HAMMAM</p>
-      <p>La chaleur et l'umidité présente en grande quantité dans le hammam permettent l'ouverture de vos pores
-        contribuant ainsi
-        un nettoyage en profondeur de votre peau. Celle-ci aura alors un aspect plus doux et plus net et pourra être
-        complété
-        par un soin du visage ou du corps comme un gommage pour encore plus de douceur.</p>
-    </div>
-  </div>
-  <div class="row m-3 border d-flex align-items-center d-flex ">
-    <div class="col col-12 col-sm-6">
-      <%= image_tag("jacuzzi.jpg", class:" mb-3 mt-4 w-100 ")%>
-    </div>
-    <div class="col col-12 col-sm-6 mt-1 ">
-      <p>JACUZZI</p>
-      <p>L’eau chaude et les jets hydromassants permettent d’augmenter le flux sanguin. L’amélioration de la
-        circulation sanguine
-        va avoir des effets bienfaisants sur les migraines, le cœur, la tension artérielle, les douleurs de dos, les
-        courbatures, l’arthrite, les varices, les douleurs chroniques …</p>
-    </div>
-  </div>
-  <div class="row m-3 border d-flex align-items-center d-flex flex-row-reverse">
-    <div class="col col-12 col-sm-6">
-      <%= image_tag("sauna.jpg", class:"mb-3 mt-4 w-100")%>
-    </div>
-    <div class="col col-12 col-sm-6 mt-1">
-      <P>SAUNA</P>
-      <p>Connu pour ses bienfaits antistress, il est aussi réputé pour être une aide au sommeil mais aussi un remède
-        aux
-        problèmes de peau (acné, psoriasis, eczéma, urticaire). Contrairement au hammam, la chaleur dans un sauna
-        reste sèche
-        (entre 3% et 20% d'humidité) pour une température d'utilisation idéale de 80°c.</p>
-    </div>
-  </div>
+  <%end%>
 </div>
-</body>
-</html>
