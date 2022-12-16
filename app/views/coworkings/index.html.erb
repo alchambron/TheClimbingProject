@@ -1,18 +1,17 @@
-<body class="light">
-  <div class="container-coworking">
-    <div class="top-coworking text-center py-5 ">
-      <h1> Espace coworking</h1>
-    </div>
-    <% @coworking.each do |cowork| %>
-      <div class=" row m-3 border d-flex align-items-center d-flex flex-row ">
-        <div class="col col-12 col-sm-6 mt-4  ">
-          <p><%= cowork.content %></p>
+<div class="d-flex container-fluid text-center flex-column ">
+  <%@coworking.each do |cowork|%>
+    <div class="  border w-100 d-flex align-items-center flex-column flex-sm-row ">
+      <div class="w-100 m-3">
+        <%= image_tag("arcade.jpg", class:"w-100")%>
+      </div>
+      <div class="d-flex flex-column justify-content-center w-100">
+        <div class="d-flex mt-1 text-center justify-content-center">
+          <p><%= cowork.title %></p>
         </div>
-        <div class="col col-12 col-sm-6">
-          <%= image_tag("cowork.jpg", class: "mb-3 mt-4 w-100") %>
+        <div class="d-flex justify-content-center">
+          <p><%= cowork.content%></p>
         </div>
       </div>
-    <% end %>
-  </div>
-</body>
-<script src="script_coworking.js"></script>
+    </div>
+  <%end%>
+</div>
