@@ -5,12 +5,10 @@ class CoursesController < ApplicationController
   def index
     # It's a variable that is used to determine the start date of the week.
     @center_id = params[:center_id]
-    if @center_id.nil?
-      @center_id = 1
-    end
+    @center_id = 1 if @center_id.nil?
     monday_date = params.fetch(:start_date, Date.today).to_date.beginning_of_week(:monday)
     courses = Center.find(@center_id).courses
-    @course_events = courses.map { |c| CourseEvent.from_course(c, monday_date) }
+    @course_events = courses.map { |c| CourseEvent.new(c, monday_date) }
     @centers = Center.all
   end
 
