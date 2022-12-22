@@ -21,6 +21,6 @@ class User < ApplicationRecord
   end
 
   def future_courses
-    order_courses.filter{ |order_course| order_course.is_future} 
+    order_courses.filter { |order_course| order_course.is_future }
   end
 end
