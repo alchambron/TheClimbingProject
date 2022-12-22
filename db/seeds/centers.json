@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Grimpe de l'Ardèche",
+        "description": "Venez découvrir notre salle d'escalade en Ardèche ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre bar vous accueillera avec plaisir. N'hésitez pas à nous rendre visite !",
+        "latitude": 44.929362,
+        "longitude": 4.369513
+    },
+    {
+        "name": "Vertical Club Orly",
+        "description": "Rejoins-nous au Vertical Club Orly pour une expérience d'escalade inoubliable ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, nous avons un bar, un espace de coworking et de jeux pour les enfants. N'hésite pas à nous rendre visite !",
+        "latitude": 48.724567,
+        "longitude": 2.397942
+    },
+    {
+        "name": "Grimpe du Marais",
+        "description": "Venez découvrir notre salle d'escalade au cœur du Marais ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre bar vous accueillera avec plaisir. N'hésitez pas à nous rendre visite !",
+        "latitude": 48.859256,
+        "longitude": 2.357968
+    },
+    {
+        "name": "Grimpe de l'Oise",
+        "description": "Venez découvrir notre salle d'escalade en bord de l'Oise ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se restaurer, notre bar vous accueillera avec plaisir. N'hésitez pas à nous rendre visite !",
+        "latitude": 49.04985,
+        "longitude": 2.429738
+    },
+    {
+        "name": "Grimpe de l'Essonne",
+        "description": "Venez découvrir notre salle d'escalade en bord de l'Essonne ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se restaurer, notre bar vous accueillera avec plaisir. N'hésitez pas à nous rendre visite !",
+        "latitude": 48.633333,
+        "longitude": 2.333333
+    },
+    {
+        "name": "Grimpe de la Seine",
+        "description": "Venez découvrir notre salle d'escalade en bord de la Seine ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se restaurer, notre bar vous accueillera avec plaisir. N'hésitez pas à nous rendre visite !",
+        "latitude": 48.856613,
+        "longitude": 2.352222
+    },
+    {
+        "name": "Grimpe de la Loire",
+        "description": "Venez découvrir notre salle d'escalade en bord de la Loire ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se restaurer, notre bar vous accueillera avec plaisir. N'hésitez pas à nous rendre visite !",
+        "latitude": 47.218371,
+        "longitude": -1.553621
+    },
+    {
+        "name": "Vertical Club Marseille",
+        "description": "Venez découvrir notre salle d'escalade au cœur de Marseille ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre bar vous accueillera avec plaisir. N'hésitez pas à nous rendre visite !",
+        "latitude": 43.296482,
+        "longitude": 5.369778
+    },
+    {
+        "name": "Vertical Club Lyon",
+        "description": "Venez découvrir notre salle d'escalade au cœur de Lyon ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre bar vous accueillera avec plaisir. N'hésitez pas à nous rendre visite !",
+        "latitude": 45.750000,
+        "longitude": 4.850000
+    },
+    {
+        "name": "Grimpe de la Garonne",
+        "description": "Venez découvrir notre salle d'escalade en bord de la Garonne ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se restaurer, notre bar vous accueillera avec plaisir. N'hésitez pas à nous rendre visite !",
+        "latitude": 44.829722,
+        "longitude": -0.578056
+    },
+    {
+        "name": "Vertical Club Ajaccio",
+        "description": "Venez découvrir notre salle d'escalade en bord de la mer Méditerranée, à Ajaccio ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre après l'effort, notre terrasse vous offrira une vue imprenable sur la mer. N'hésitez pas à nous rendre visite !",
+        "latitude": 41.919118,
+        "longitude": 8.738052
+    }
+]

@@ -6,10 +6,6 @@ class CourseEvent
     @monday_date = monday_date
   end
 
-  def self.from_course(course, date_monday)
-    return CourseEvent.new(course, date_monday)
-  end
-
   def date
     return @monday_date + @course.week_day
   end
@@ -38,7 +34,11 @@ class CourseEvent
 
   # Check if user_id has reservation for the course
   def has_slots_reserved(user_id)
-    @course.order_courses.where(date: date, user_id: user_id).count > 0
+    !user_reserved_slot(user_id).nil?
+  end
+
+  def user_reserved_slot(user_id)
+    @course.order_courses.where(date: date, user_id: user_id)[0]
   end
 
   def is_past

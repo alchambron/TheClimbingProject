@@ -1,5 +1,6 @@
 class OrderCoursesController < ApplicationController
   before_action :set_order_course, only: %i[show edit update destroy]
+  before_action :check_user_auth, only: %i[book_course refund_course]
 
   # GET /order_courses or /order_courses.json
   def index
@@ -24,11 +25,8 @@ class OrderCoursesController < ApplicationController
   def book_course
     course = Course.find(params[:course_id])
     course_event = CourseEvent.new(course, params[:date].to_datetime)
-    unless user_signed_in?
-      redirect_to(new_user_session_path)
-      return
-    end
     return if course_event.is_past
+
     session[:book_course] =
 OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: params[:date])
     redirect_to(checkout_create_path, remote: true)
@@ -37,14 +35,11 @@ OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: p
   def refund_course
     course = Course.find(params[:course_id])
     course_event = CourseEvent.new(course, params[:date].to_datetime)
-    if course_event.is_past
-      return
-    else
-        session[:refund_course] = params[:order_course_id]
-        redirect_to(checkout_refund_path, remote: true) 
-    end
-  end
+    return if course_event.is_past
 
+    session[:refund_course] = params[:order_course_id]
+    redirect_to(checkout_refund_path, remote: true)
+  end
 
   # POST /order_courses or /order_courses.json
   def create
@@ -94,5 +89,12 @@ OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: p
   # Only allow a list of trusted parameters through.
   def order_course_params
     params.fetch(:order_course, {})
+  end
+
+  def check_user_auth
+    return if user_signed_in?
+
+    store_location_for(:user, courses_path)
+    redirect_to(new_user_session_path)
   end
 end

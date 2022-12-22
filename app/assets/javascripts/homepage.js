@@ -7,7 +7,7 @@ if (width > 800){
 let swiper = new Swiper(".mySwiper", {
     slidesPerView: sliderPerView,
     spaceBetween: 30,
-    slidesPerGroup: 3,
+    slidesPerGroup: sliderPerView,
     loop: true,
     loopFillGroupWithBlank: true,
     pagination: {
