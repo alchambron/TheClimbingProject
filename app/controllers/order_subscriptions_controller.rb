@@ -1,5 +1,6 @@
 class OrderSubscriptionsController < ApplicationController
   before_action :set_order_subscription, only: %i[show edit update destroy]
+  before_action :check_user_auth, only: %i[book_subscription]
 
   # GET /order_subscriptions or /order_subscriptions.json
   def index
@@ -86,5 +87,12 @@ class OrderSubscriptionsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def order_subscription_params
     params.fetch(:order_subscription, {})
+  end
+
+  def check_user_auth
+    return if user_signed_in?
+
+    store_location_for(:user, subscriptions_path)
+    redirect_to(new_user_session_path)
   end
 end
