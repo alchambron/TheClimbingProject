@@ -23,7 +23,7 @@
               <% else %>
                 <% if user_signed_in? && course_event.has_slots_reserved(current_user.id) %>
                   Vous avez déjà reservé ce créneau.
-                  <%= button_to "Annuler votre cours", order_course_refund_course_path(course_id: course_event.course.id, date: course_event.date, order_course_id: course_event.user_reserved_slot(current_user.id).id), class: "btn btn-danger" %>
+                  <%= button_to "Annuler votre cours", order_course_refund_course_path(course_id: course_event.course.id, date: course_event.date, order_course_id: course_event.user_reserved_slot(current_user.id), params: {redirection_path: user_path(current_user.id)}), class: "btn btn-danger" %>
                 <% elsif course_event.has_available_slots %>
                   <%= button_to "Réserver", order_course_book_course_path(course_id: course_event.course.id, date: course_event.date), method: :post, class:"btn btn-success"%>
                 <% else %>
