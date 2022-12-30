@@ -1,12 +1,22 @@
 <p style="color: green"><%= notice %></p>
-<h1>Centers</h1>
-<h1>Voici la liste de nos différent centre</h1>
-<div id="centers">
-  <% @centers.each do |center| %>
-    <%= render center %>
-    <p>
-      <%= link_to "Show this center", center %>
-    </p>
-  <% end %>
+<h1>Nos salles</h1>
+<div id="map-all-centers-container">
+  <div id="centers">
+    <% @centers.each do |center|%>
+      <div class="center" onclick="focusCenter(<%= center.id %>)" data-center-id="<%= center.id %>" onmouseover="startMarkerAnimation(<%= center.id %>)" onmouseleave="stopMarkerAnimation(<%= center.id %>)">
+        <%= render center %>
+        <p>
+          <%= link_to "Show this center", center %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+  <div id="map"></div>
 </div>
-<%= link_to "New center", new_center_path %>
+<% content_for :centers do %>
+  <%= raw @centers.to_json %>
+<% end %>
+<div id="centers-json">
+  <%= yield :centers %>
+</div>
+<%= javascript_include_tag('leaflet_all_centers.js') %>

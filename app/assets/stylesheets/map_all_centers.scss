@@ -1,0 +1,55 @@
+#map-all-centers-container {
+    height: 700px;
+    display: flex;
+
+    #centers {
+        width: 30%;
+        overflow: auto;
+        background: rgba(255, 255, 255, 0.5);
+
+        .center {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+
+            &.focused {
+                background: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+
+    #map {
+        height: 100%;
+        width: 70%;
+
+        .leaflet-marker-icon {
+            opacity: 0.5;
+
+            &.focused {
+                opacity: 1;
+            }
+
+            &:not(.focused) {
+                img {
+                    &.over {
+                        animation: bounce 0.35s cubic-bezier(0, 0, 0, 1) infinite alternate;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+#centers-json {
+    display: none;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0)
+    }
+
+    to {
+        transform: translateY(-30px)
+    }
+}
