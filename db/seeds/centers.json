@@ -60,9 +60,207 @@
         "longitude": -0.578056
     },
     {
+        "name": "Vertical Club Toulouse",
+        "description": "Notre salle d'escalade à Toulouse vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 43.604652,
+        "longitude": 1.444209
+    },
+    {
+        "name": "Grimpe de Nice",
+        "description": "Venez découvrir notre salle d'escalade à Nice, au bord de la mer ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 43.696036,
+        "longitude": 7.265594
+    },
+    {
+        "name": "Grimpe de Grenoble",
+        "description": "Venez découvrir notre salle d'escalade à Grenoble, au pied des Alpes ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 45.188529,
+        "longitude": 5.724524
+    },
+    {
+        "name": "Vertical Club Montpellier",
+        "description": "Notre salle d'escalade à Montpellier vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 43.610769,
+        "longitude": 3.876716
+    },
+    {
+        "name": "Vertical Club Créteil",
+        "description": "Notre salle d'escalade à Créteil vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 48.789260,
+        "longitude": 2.441744
+    },
+    {
+        "name": "Grimpe de Bobigny",
+        "description": "Venez découvrir notre salle d'escalade à Bobigny, à proximité de Paris ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 48.903134,
+        "longitude": 2.448027
+    },
+    {
+        "name": "Vertical Club Bondy",
+        "description": "Notre salle d'escalade à Bondy vous attend pour des moments de grimpe exceptionnels ! Nous proposons des parcours pour tous les niveaux, ainsi que des ateliers de découverte encadrés par des professionnels. Et pour se détendre, notre espace détente vous accueille avec son bar et ses fauteuils confortables.",
+        "latitude": 48.923824,
+        "longitude": 2.464741
+    },
+    {
+        "name": "Vertical Club Argenteuil",
+        "description": "Notre salle d'escalade à Argenteuil vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 48.951258,
+        "longitude": 2.254796
+    },
+    {
+        "name": "Grimpe de Saint-Denis",
+        "description": "Venez découvrir notre salle d'escalade à Saint-Denis, à proximité de Paris ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 48.935658,
+        "longitude": 2.356834
+    },
+    {
+        "name": "Vertical Club Cergy",
+        "description": "Notre salle d'escalade à Cergy vous attend pour des moments de grimpe exceptionnels ! Nous proposons des parcours pour tous les niveaux, ainsi que des ateliers de découverte encadrés par des professionnels. Et pour se détendre, notre espace détente vous accueille avec son bar et ses fauteuils confortables.",
+        "latitude": 49.035604,
+        "longitude": 2.076038
+    },
+    {
+        "name": "Grimpe de Pontoise",
+        "description": "Venez découvrir notre salle d'escalade à Pontoise, à proximité de Paris ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 49.047283,
+        "longitude": 2.091453
+    },
+    {
+        "name": "Vertical Club Mantes-la-Jolie",
+        "description": "Notre salle d'escalade à Mantes-la-Jolie vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 48.985828,
+        "longitude": 1.706882
+    },
+    {
+        "name": "Vertical Club Varsovie",
+        "description": "Notre salle d'escalade à Varsovie vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 52.229676,
+        "longitude": 21.012229
+    },
+    {
+        "name": "Grimpe de Cracovie",
+        "description": "Venez découvrir notre salle d'escalade à Cracovie, au cœur de la Pologne ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 50.064651,
+        "longitude": 19.944980
+    },
+    {
+        "name": "Vertical Club Gdansk",
+        "description": "Notre salle d'escalade à Gdańsk vous attend pour des moments de grimpe exceptionnels ! Nous proposons des parcours pour tous les niveaux, ainsi que des ateliers de découverte encadrés par des professionnels. Et pour se détendre, notre espace détente vous accueille avec son bar et ses fauteuils confortables.",
+        "latitude": 54.352025,
+        "longitude": 18.646638
+    },
+    {
+        "name": "Grimpe de Wroclaw",
+        "description": "Venez découvrir notre salle d'escalade à Wrocław, au cœur de la Pologne ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 51.107885,
+        "longitude": 17.038538
+    },
+    {
+        "name": "Vertical Club Poznan",
+        "description": "Notre salle d'escalade à Poznan vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 52.406374,
+        "longitude": 16.925167
+    },
+    {
+        "name": "Vertical Club Lisbonne",
+        "description": "Notre salle d'escalade à Lisbonne vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 38.736946,
+        "longitude": -9.142685
+    },
+    {
+        "name": "Grimpe de Porto",
+        "description": "Venez découvrir notre salle d'escalade à Porto, au cœur du Portugal ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 41.157944,
+        "longitude": -8.629105
+    },
+    {
+        "name": "Vertical Club Coimbra",
+        "description": "Notre salle d'escalade à Coimbra vous attend pour des moments de grimpe exceptionnels ! Nous proposons des parcours pour tous les niveaux, ainsi que des ateliers de découverte encadrés par des professionnels. Et pour se détendre, notre espace détente vous accueille avec son bar et ses fauteuils confortables.",
+        "latitude": 40.203322,
+        "longitude": -8.410257
+    },
+    {
+        "name": "Grimpe de Braga",
+        "description": "Venez découvrir notre salle d'escalade à Braga, au cœur du Portugal ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 41.550100,
+        "longitude": -8.428000
+    },
+    {
+        "name": "Vertical Club Funchal",
+        "description": "Notre salle d'escalade à Funchal vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 32.666910,
+        "longitude": -16.924053
+    },
+    {
+        "name": "Vertical Club Nancy",
+        "description": "Notre salle d'escalade à Nancy vous attend pour des moments de grimpe exceptionnels ! Nous proposons des parcours pour tous les niveaux, ainsi que des ateliers de découverte encadrés par des professionnels. Et pour se détendre, notre espace détente vous accueille avec son bar et ses fauteuils confortables.",
+        "latitude": 48.692054,
+        "longitude": 6.184417
+    },
+    {
+        "name": "Grimpe de Tours",
+        "description": "Venez découvrir notre salle d'escalade à Tours, au cœur de la région Centre ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 47.393601,
+        "longitude": 0.695600
+    },
+    {
+        "name": "Vertical Club Orléans",
+        "description": "Notre salle d'escalade à Orléans vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 47.902964,
+        "longitude": 1.909251
+    },
+    {
+        "name": "Grimpe de Rennes",
+        "description": "Venez découvrir notre salle d'escalade à Rennes, en Bretagne ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 48.113475,
+        "longitude": -1.675705
+    },
+    {
         "name": "Vertical Club Ajaccio",
-        "description": "Venez découvrir notre salle d'escalade en bord de la mer Méditerranée, à Ajaccio ! Nous proposons des parcours pour tous niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre après l'effort, notre terrasse vous offrira une vue imprenable sur la mer. N'hésitez pas à nous rendre visite !",
-        "latitude": 41.919118,
-        "longitude": 8.738052
+        "description": "Notre salle d'escalade à Ajaccio vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 41.918360,
+        "longitude": 8.735260
+    },
+    {
+        "name": "Vertical Club Dijon",
+        "description": "Notre salle d'escalade à Dijon vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 47.322047,
+        "longitude": 5.041480
+    },
+    {
+        "name": "Grimpe de Limoges",
+        "description": "Venez découvrir notre salle d'escalade à Limoges, en Nouvelle-Aquitaine ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 45.833619,
+        "longitude": 1.261105
+    },
+    {
+        "name": "Vertical Club Poitiers",
+        "description": "Notre salle d'escalade à Poitiers vous attend pour des moments de grimpe exceptionnels ! Nous proposons des parcours pour tous les niveaux, ainsi que des ateliers de découverte encadrés par des professionnels. Et pour se détendre, notre espace détente vous accueille avec son bar et ses fauteuils confortables.",
+        "latitude": 46.583019,
+        "longitude": 0.341060
+    },
+    {
+        "name": "Grimpe de Clermont-Ferrand",
+        "description": "Venez découvrir notre salle d'escalade à Clermont-Ferrand, en Auvergne ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 45.777222,
+        "longitude": 3.087025
+    },
+    {
+        "name": "Grimpe de Bastia",
+        "description": "Venez découvrir notre salle d'escalade à Bastia, en Corse ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 42.698684,
+        "longitude": 9.450881
+    },
+    {
+        "name": "Grimpe de Mulhouse",
+        "description": "Venez découvrir notre salle d'escalade à Mulhouse, en Alsace ! Nous proposons des parcours pour tous les goûts, ainsi que des cours de perfectionnement encadrés par des professionnels. Et pour se restaurer, notre bar vous attend avec ses plats locaux et ses boissons rafraîchissantes.",
+        "latitude": 47.750839,
+        "longitude": 7.335888
+    },
+    {
+        "name": "Vertical Club Porto-Vecchio",
+        "description": "Notre salle d'escalade à Porto-Vecchio vous accueille pour des moments de grimpe inoubliables ! Nous proposons des parcours pour tous les niveaux, ainsi que des cours encadrés par des professionnels. Et pour se détendre, notre espace détente vous attend avec son bar et ses fauteuils confortables.",
+        "latitude": 41.595278,
+        "longitude": 9.280556
     }
 ]
