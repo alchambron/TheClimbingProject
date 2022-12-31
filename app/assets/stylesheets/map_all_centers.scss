@@ -3,23 +3,40 @@
     display: flex;
 
     #centers {
-        width: 30%;
+        width: 15%;
         overflow: auto;
         background: rgba(255, 255, 255, 0.5);
 
         .center {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
             cursor: pointer;
+            background: transparent;
+
+            .card-img-overlay {
+                background: rgba(0, 0, 0, 0.5);
+                color: #ddd;
+
+                a {
+                    color: #ddd !important;
+                }
+            }
 
             &.focused {
-                background: rgba(255, 255, 255, 0.5);
+                .card-img-overlay {
+                    background: rgba(255, 255, 255, 0.5);
+                    color: #000;
+                }
+
+                a {
+                    color: #000 !important;
+                }
             }
         }
     }
 
     #map {
         height: 100%;
-        width: 70%;
+        width: 85%;
 
         .leaflet-marker-icon {
             opacity: 0.5;
@@ -45,11 +62,11 @@
 }
 
 @keyframes bounce {
-    from {
-        transform: translateY(0)
+    0% {
+        transform: translateY(0) scaleY(0.5)
     }
 
-    to {
+    100% {
         transform: translateY(-30px)
     }
 }

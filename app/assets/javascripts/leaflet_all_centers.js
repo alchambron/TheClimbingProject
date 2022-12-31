@@ -31,12 +31,35 @@ affichée à côté de la carte. Elle appelle également la fonction focusMarker
 surbrillance le marker correspond
 */
 
+/* Getting the coordinates from the URL. */
+function getCoordinatesInURL() {
+    // Récupère l'objet URLSearchParams qui contient les paramètres de l'URL
+    const searchParams = new URLSearchParams(window.location.search);
+    // Récupère la valeur du paramètre "latitude"
+    const paramLatitude = searchParams.get('latitude');
+    const paramLongitude = searchParams.get('longitude');
+    if (paramLatitude == null || paramLongitude == null) {
+        return null;
+    }
+    return [paramLatitude, paramLongitude];
+}
+
+
 // Récupère les données JSON contenues dans l'élément HTML avec l'ID "centers-json"
-const centers = JSON.parse(document.getElementById("centers-json").innerHTML);
+const centers = JSON.parse(document.getElementById("centers-json").innerHTML).map(c => c.center);
 
 // Crée une carte Leaflet et l'affiche dans l'élément HTML avec l'ID "map"
 // La carte est centrée sur les coordonnées 46.61605556964202, 2.7054297799658555 et affiche un niveau de zoom de 6
-let map = L.map('map').setView([46.61605556964202, 2.7054297799658555], 6);
+let centerCoords = getCoordinatesInURL();
+console.log("🚀 ~ file: leaflet_all_centers.js:58 ~ centerCoords", centerCoords)
+if (centerCoords == null) {
+    centerCoords = [46.61605556964202, 2.7054297799658555];
+}
+
+/* if(paramLatitude != null && paramLongitude != null) {
+    centerCoords = [parseFloat(paramLatitude), parseFloat(paramLongitude)]
+} */
+let map = L.map('map').setView(centerCoords, 6);
 
 // Ajoute une couche de tuiles OpenStreetMap à la carte
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -50,7 +73,7 @@ const markers = [];
 // Pour chaque élément du tableau "centers", crée un marqueur Leaflet sur la carte
 centers.forEach((center) => {
     // Crée un icône personnalisé pour le marqueur avec une image Leaflet par défaut comme contenu
-    var markerIcon = L.divIcon({ className: 'marker-custom-icon', html: "<img src='https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png'>", iconAnchor: [12.5, 41], popupAnchor: [0, -41] });
+    const markerIcon = L.divIcon({ className: 'marker-custom-icon', html: "<img src='https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png'>", iconAnchor: [12.5, 41], popupAnchor: [0, -41] });
 
     // Crée un marqueur Leaflet à l'aide des coordonnées de "center" et de l'icône personnalisé
     const marker = L.marker([center.latitude, center.longitude], { icon: markerIcon }).addTo(map);
@@ -59,7 +82,7 @@ centers.forEach((center) => {
     marker.bindPopup(`
     <h4>${center.name}</h4>
     <p>${center.description}</p>
-    <p style="text-align: right;"><a href="${center.id}">Plus de détails >></a></p>
+    <p style="text-align: right;"><a href="centers/${center.id}">Plus de détails >></a></p>
     `);
 
     // Ajoute un écouteur d'événement "click" au marqueur qui appelle la fonction "focusCenter" avec l'ID de "center" en argument
@@ -107,6 +130,7 @@ function focusCenter(centerId) {
 
     // Ajoute la classe "focused" à l'élément HTML récupéré
     divForCenter.classList.add('focused');
+    divForCenter.scrollIntoView({ behavior: "smooth" });
 }
 
 // Fonction qui récupère l'élément HTML associé à un élément du tableau "centers"
@@ -137,4 +161,28 @@ function stopMarkerAnimation(centerId) {
 
     // Récupère l'image de l'icône du marqueur
     markerWithId.marker._icon.childNodes[0].classList.remove('over');
+}
+
+const getCurrentPositionSuccessCallback = (position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    redirectToPageWithCoords([latitude, longitude]);
+};
+
+const getCurrentPositionErrorCallback = (error) => {
+    console.log(error);
+    redirectToPageWithCoords(centerCoords);
+};
+
+if (getCoordinatesInURL() == null) {
+    navigator.geolocation.getCurrentPosition(getCurrentPositionSuccessCallback, getCurrentPositionErrorCallback);
+}
+
+function redirectToPageWithCoords(coords) {
+    // Crée un nouvel objet URLSearchParams qui contient les nouvelles valeurs des paramètres latitude et longitude
+    const searchParams = new URLSearchParams();
+    searchParams.set('latitude', coords[0]);
+    searchParams.set('longitude', coords[1]);
+    // Ajoute les paramètres à l'URL de la page actuelle et redirige vers cette URL en utilisant window.location.replace
+    window.location.replace(`${window.location.pathname}?${searchParams}`);
 }

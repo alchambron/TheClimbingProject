@@ -2,19 +2,26 @@
 <h1>Nos salles</h1>
 <div id="map-all-centers-container">
   <div id="centers">
-    <% @centers.each do |center|%>
-      <div class="center" onclick="focusCenter(<%= center.id %>)" data-center-id="<%= center.id %>" onmouseover="startMarkerAnimation(<%= center.id %>)" onmouseleave="stopMarkerAnimation(<%= center.id %>)">
-        <%= render center %>
-        <p>
-          <%= link_to "Show this center", center %>
-        </p>
+    <% @centers_with_distance.each do |center_with_distance|%>
+      <div class="center card m-2" onclick="focusCenter(<%= center_with_distance[:center].id %>)" data-center-id="<%= center_with_distance[:center].id %>" onmouseover="startMarkerAnimation(<%= center_with_distance[:center].id %>)" onmouseleave="stopMarkerAnimation(<%= center_with_distance[:center].id %>)">
+        <% if center_with_distance[:center].thumbnail.attached?%>
+          <%= image_tag center_with_distance[:center].thumbnail, class: "card-img" %>
+        <% else %>
+          <%= image_tag("climb1.jpg", class: "card-img") %>
+        <% end %>
+        <div class="card-img-overlay"><%= render center_with_distance[:center] %>
+          <p>Distance: <%= center_with_distance[:distance].to_d.round(1, :truncate).to_f %> km</p>
+          <p>
+            <%= link_to "Détails >>", center_with_distance[:center] %>
+          </p>
+        </div>
       </div>
     <% end %>
   </div>
   <div id="map"></div>
 </div>
 <% content_for :centers do %>
-  <%= raw @centers.to_json %>
+  <%= raw @centers_with_distance.to_json %>
 <% end %>
 <div id="centers-json">
   <%= yield :centers %>
