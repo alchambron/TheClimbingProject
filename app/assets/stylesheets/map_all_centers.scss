@@ -1,0 +1,72 @@
+#map-all-centers-container {
+    height: 700px;
+    display: flex;
+
+    #centers {
+        width: 15%;
+        overflow: auto;
+        background: rgba(255, 255, 255, 0.5);
+
+        .center {
+            /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
+            cursor: pointer;
+            background: transparent;
+
+            .card-img-overlay {
+                background: rgba(0, 0, 0, 0.5);
+                color: #ddd;
+
+                a {
+                    color: #ddd !important;
+                }
+            }
+
+            &.focused {
+                .card-img-overlay {
+                    background: rgba(255, 255, 255, 0.5);
+                    color: #000;
+                }
+
+                a {
+                    color: #000 !important;
+                }
+            }
+        }
+    }
+
+    #map {
+        height: 100%;
+        width: 85%;
+
+        .leaflet-marker-icon {
+            opacity: 0.5;
+
+            &.focused {
+                opacity: 1;
+            }
+
+            &:not(.focused) {
+                img {
+                    &.over {
+                        animation: bounce 0.35s cubic-bezier(0, 0, 0, 1) infinite alternate;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+#centers-json {
+    display: none;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0) scaleY(0.5)
+    }
+
+    100% {
+        transform: translateY(-30px)
+    }
+}
