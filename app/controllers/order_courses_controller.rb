@@ -38,7 +38,7 @@ OrderCourse.new(course_id: params[:course_id], user_id: current_user.id, date: p
     return if course_event.is_past
 
     session[:refund_course] = params[:order_course_id]
-    redirect_to(checkout_refund_path, remote: true)
+    redirect_to(checkout_refund_path(redirection_path: params[:redirection_path]), remote: true)
   end
 
   # POST /order_courses or /order_courses.json

@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/thomas/Bureau/THE-HACKING-PROJECT/TheClimbingProject/app/controllers/order_courses_controller.rb:34 :
+
+    [1;34m29[0m: 
+    [1;34m30[0m:     session[[33m:book_course[0m] =
+    [1;34m31[0m: [1;34;4mOrderCourse[0m.new([35mcourse_id[0m: params[[33m:course_id[0m], [35muser_id[0m: current_user.id, [35mdate[0m: params[[33m:date[0m])
+    [1;34m32[0m:     redirect_to(checkout_create_path, [35mremote[0m: [1;36mtrue[0m)
+    [1;34m33[0m:   [32mend[0m
+ => [1;34m34[0m:   binding.pry
+    [1;34m35[0m:   [32mdef[0m [1;34mrefund_course[0m(redirection_path)
+    [1;34m36[0m:     course = [1;34;4mCourse[0m.find(params[[33m:course_id[0m])
+    [1;34m37[0m:     course_event = [1;34;4mCourseEvent[0m.new(course, params[[33m:date[0m].to_datetime)
+    [1;34m38[0m:     [32mreturn[0m [32mif[0m course_event.is_past
+    [1;34m39[0m: 
+

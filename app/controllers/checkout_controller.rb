@@ -39,18 +39,17 @@ class CheckoutController < ApplicationController
   end
 
   def refund
+    redirection_path = params[:redirection_path]
     refund_order = OrderCourse.find(session[:refund_course])
-    @refund_session = Stripe::Refund.create(
-      {
-        charge: refund_order.charge_id
-      }
-    )
-    if !@refund_session[:status] == "succeeded"
-      redirect_to user_path(refund_order.user.id), alert: "Une erreur est apparu, contacter l'administrateur."
+    @refund_session = Stripe::Refund.create({ charge: refund_order.charge_id })
+    if !@refund_session[:status] == 'succeeded'
+      redirect_to(redirection_path, alert: "Une erreur est apparu, contacter l'administrateur.")
     else
-      redirect_to user_path(refund_order.user.id), notice: "Votre cours à bien été annulé, vous serez remboursé dans les 7 prochains jours."
+      redirect_to(
+        redirection_path,
+        notice: 'Votre cours à bien été annulé, vous serez remboursé dans les 7 prochains jours.'
+      )
       refund_order.destroy
     end
-
   end
 end
